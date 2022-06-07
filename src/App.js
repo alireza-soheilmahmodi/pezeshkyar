@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Login from './components/Login/Login';
+import Missing from './components/missing/Missing';
+import MyApp from './components/MyApp/MyApp';
+import RequireAuth from './components/RequireAuth';
+import Layout from './components/Layout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Login />} />
+
+        <Route element={<RequireAuth />}>
+          <Route path="app" element={<MyApp />} />
+        </Route>
+
+        <Route path="*" element={<Missing />} />
+      </Route>
+    </Routes>
   );
 }
 
