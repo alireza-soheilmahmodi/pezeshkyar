@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Login />} />
 
         <Route element={<RequireAuth />}>
-          <Route path="app" element={<MyApp />} />
+          <Route path="app/*" element={<MyApp />} />
         </Route>
 
         <Route path="*" element={<Missing />} />
