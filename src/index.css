@@ -11,10 +11,6 @@
 
 .App {
   height: 100vh;
-}
-
-html {
   font-family: 'B-Nazanin';
-  font-size: 22px;
-  color: #fff;
+  font-size: 1.5rem;
 }

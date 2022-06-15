@@ -1,11 +1,11 @@
 .right {
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
   background-color: #363740;
+  padding: 0;
 }
 .right label {
   color: #757682;
-  font-size: 1rem;
   margin: 20px 0 60px 10px;
 }
 
@@ -16,7 +16,6 @@
 }
 
 .right ul li {
-  font-size: 1rem;
   margin: 0;
 }
 

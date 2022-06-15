@@ -1,24 +1,19 @@
-import { useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import useWindowSize from '../../hooks/useWindowSize';
+import { Outlet } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
 import Navbar from '../Navbar/Navbar';
+import Style from './MyAppLayout.module.css';
 
 const MyAppLayout = () => {
-  const { width } = useWindowSize();
-
   return (
-    <div>
+    <>
       <Navbar />
-      <div className="container-fluid">
-        <div className="row">
-          <Sidebar />
-          <div className="col-md-9 col-lg-10 col-sm-12">
-            <Outlet />
-          </div>
-        </div>
+      <div className={`${Style.row} row g-0`}>
+        <Sidebar />
+        <main className={`${Style.main} col-md-9 col-lg-10 col-sm-12 g-0`}>
+          <Outlet />
+        </main>
       </div>
-    </div>
+    </>
   );
 };
 

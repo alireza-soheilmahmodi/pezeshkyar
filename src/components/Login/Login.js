@@ -28,8 +28,6 @@ const Login = () => {
     setErrMsg('');
   }, [user, pwd]);
 
-  console.log(auth);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 

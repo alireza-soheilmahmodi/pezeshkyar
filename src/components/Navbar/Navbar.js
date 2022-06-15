@@ -26,7 +26,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={'/patients'} className="nav-link">
+              <Link to={'/app/patients'} className="nav-link">
                 جستجوی بیمار
               </Link>
             </li>

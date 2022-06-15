@@ -1,0 +1,12 @@
+.patientsPage {
+  width: 80%;
+  height: 80%;
+  overflow-y: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .patientsPage {
+    width: 100%;
+    height: 100%;
+  }
+}
