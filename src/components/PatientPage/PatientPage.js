@@ -7,6 +7,7 @@ import Style from './PatientPage.module.css';
 import patientDataLabels from '../../utils/patientDataLabels';
 import patientFormsLabel from '../../utils/patientFormsLabel';
 import Loading from '../common/Loading/Loading';
+import { Link } from 'react-router-dom';
 
 const PatientPage = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const PatientPage = () => {
         setPatientInfo(response.data);
         setPatientForms(response2.data);
         setIsLoading(false);
-        console.log(response2.data);
+        console.log(response2);
       } catch (error) {
         if (error.response) {
           console.log(error.response.data);
@@ -51,6 +52,7 @@ const PatientPage = () => {
         >
           {Object.entries(patientDataLabels).map(([key, label]) => (
             <FormField
+              key={key}
               label={label}
               value={patientInfo[key]?.name || patientInfo[key]}
             />
@@ -69,16 +71,34 @@ const PatientPage = () => {
       <div className={Style.form}>
         <h2>فرم های بیمار</h2>
         {Object.entries(patientFormsLabel).map(([key, label]) => (
-          <FormWrapper label={label} borderColor="#20b534">
-            {patientForms[key].map((item) => {
+          <FormWrapper label={label} key={key} borderColor="#20b534">
+            <ul className={Style.formRow}>
+              <li>تاریخ و ساعت</li>
+              <li>چشم</li>
+              <li>مشخصات دکتر</li>
+              <li>جزئیات بیشتر</li>
+            </ul>
+            {patientForms[key].map((item, index) => {
+              const urlArray = item?.url.split('/').slice(-3);
+              let url = '';
+              urlArray.forEach((element) => {
+                url = url + `/${element}`;
+              });
               return (
-                <FormField
-                  label={item?.register_date}
-                  value={item?.url}
-                  width="100%"
-                />
+                <ul className={Style.formRow} key={index}>
+                  <li>{item?.register_date}</li>
+                  <li>{item?.eye_side || '----'}</li>
+                  <li>
+                    {item?.doctor?.user?.first_name +
+                      ' ' +
+                      item?.doctor?.user?.last_name}
+                  </li>
+                  <li>
+                    <Link to={`/app/form/get${url}`}>مشاهده</Link>
+                  </li>
+                </ul>
               );
-            }) || 'اطلاعاتی وجود ندارد'}
+            })}
           </FormWrapper>
         ))}
       </div>

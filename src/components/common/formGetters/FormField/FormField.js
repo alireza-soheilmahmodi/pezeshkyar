@@ -5,7 +5,7 @@ const FormFiled = ({ label, value, borderColor = 'black', width }) => {
     <div className={Style.container} style={{ width: width }}>
       <div
         className={Style.wrapper}
-        style={{ border: `3px solid ${borderColor}` }}
+        style={{ border: `1px solid ${borderColor}` }}
       >
         <label className={Style.label}>{label}</label>
         <div
