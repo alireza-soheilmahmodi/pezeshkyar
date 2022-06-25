@@ -26,7 +26,6 @@ const PatientPage = () => {
         setPatientInfo(response.data);
         setPatientForms(response2.data);
         setIsLoading(false);
-        console.log(response2);
       } catch (error) {
         if (error.response) {
           console.log(error.response.data);

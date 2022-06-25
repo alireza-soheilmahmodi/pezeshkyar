@@ -1,6 +1,6 @@
 import Style from './FormWrapper.module.css';
 
-const formWrapper = ({ children, label, borderColor }) => {
+const formWrapper = ({ children, label, borderColor = 'black' }) => {
   return (
     <section className={Style.container}>
       <div

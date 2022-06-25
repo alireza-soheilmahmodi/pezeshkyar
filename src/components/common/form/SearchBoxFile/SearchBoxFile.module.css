@@ -1,0 +1,23 @@
+.title {
+  margin-bottom: 12px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.select {
+  width: 100%;
+  background: white;
+  border: 1px solid black;
+}
+
+.option {
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+  cursor: pointer;
+}
+.option:hover {
+  background: #ccc;
+}
