@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Field, ErrorMessage } from "formik";
+import React, { Fragment } from 'react';
+import { Field, ErrorMessage } from 'formik';
 
 const TextArea = (
   {
@@ -42,6 +42,7 @@ const TextArea = (
                   {data && data.title}
                 </label>
               )}
+              <br />
               <textarea
                 {...field}
                 placeholder={placeholder || (data && data.placeholder)}
@@ -65,7 +66,7 @@ const TextArea = (
                 {(msg) => (
                   <p
                     className={errorClass || (data && data.errorClass)}
-                    style={{ color: "red" }}
+                    style={{ color: 'red' }}
                   >
                     {msg}
                   </p>

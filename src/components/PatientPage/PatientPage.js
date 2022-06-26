@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 const PatientPage = () => {
   const { id } = useParams();
+
   const [patientInfo, setPatientInfo] = useState({});
   const [patientForms, setPatientForms] = useState({});
 
@@ -23,6 +24,7 @@ const PatientPage = () => {
       try {
         const response = await axios.get(`/patients/${id}`);
         const response2 = await axios.get(`/forms/${id}`);
+
         setPatientInfo(response.data);
         setPatientForms(response2.data);
         setIsLoading(false);
@@ -98,6 +100,15 @@ const PatientPage = () => {
                 </ul>
               );
             })}
+
+            <Link
+              className={Style.addFormButton}
+              to={`/app/form/set/${key}/${patientInfo.national_id}`}
+            >
+              <button className="btn btn-success btn-lg btn-block">
+                افزودن فرم
+              </button>
+            </Link>
           </FormWrapper>
         ))}
       </div>

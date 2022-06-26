@@ -6,7 +6,7 @@ const Missing = () => {
       <h1>404</h1>
       <p>صفحه مورد نظر یافت نشد</p>
       <div className="flexGrow">
-        <Link to="/">برو به صفحه اصلی</Link>
+        <Link to="/app">برو به صفحه اصلی</Link>
       </div>
     </article>
   );

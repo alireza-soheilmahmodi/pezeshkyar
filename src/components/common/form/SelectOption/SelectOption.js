@@ -1,5 +1,5 @@
-import React, { Fragment, useState, useEffect } from "react";
-import { Field, ErrorMessage } from "formik";
+import React, { Fragment, useState, useEffect } from 'react';
+import { Field, ErrorMessage } from 'formik';
 
 const SelectOption = ({
   wrapperClass,
@@ -40,9 +40,9 @@ const SelectOption = ({
                   value={meta.value}
                   className={inputClass || (data && data.inputClass)}
                   onChange={(e) => {
-                    if (e.target.value == "انتخاب کنید") {
+                    if (e.target.value == 'انتخاب کنید') {
                       console.log(e.target.value);
-                      setFieldValue(data && data.name, null);
+                      setFieldValue(data && data.name, '');
                     } else {
                       setFieldValue(data && data.name, e.target.value);
                     }
@@ -52,7 +52,7 @@ const SelectOption = ({
                   <option value={undefined}>
                     {data && data.defaultOption
                       ? data.defaultOption
-                      : "انتخاب کنید"}
+                      : 'انتخاب کنید'}
                   </option>
 
                   {data &&
@@ -75,7 +75,7 @@ const SelectOption = ({
                     return (
                       <p
                         className={errorClass || (data && data.errorClass)}
-                        style={{ color: "red" }}
+                        style={{ color: 'red' }}
                       >
                         {msg}
                       </p>

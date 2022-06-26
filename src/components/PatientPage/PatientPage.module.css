@@ -40,3 +40,11 @@
   width: 25%;
   justify-content: center;
 }
+
+.addFormButton {
+  text-decoration: none;
+}
+
+.addFormButton button {
+  width: 40%;
+}

@@ -17,6 +17,7 @@ const FormGetter = () => {
       try {
         const response = await axios.get(`/forms/${formType}/${id}/`);
         const response2 = await axios.options(`/forms/${formType}/${id}/`);
+
         const fieldsLabel = response2.data.map((item) => {
           return { key: item.key, label: item.ui.label };
         });
