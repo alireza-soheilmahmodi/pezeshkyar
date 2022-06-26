@@ -83,7 +83,7 @@ const DateTime = (
             meta,
             form: { value, touched, errors, setFieldTouched, setFieldValue },
           }) => {
-            //console.log(value);
+            
             return (
               <span
                 style={{ transform: "translateY(10px)", marginRight: "10px" }}

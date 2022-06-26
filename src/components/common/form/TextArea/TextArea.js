@@ -27,7 +27,7 @@ const TextArea = (
           meta,
           form: { value, touched, errors, setFieldTouched, setFieldValue },
         }) => {
-          // console.log(data.defaultvalue);
+        
           return (
             <div
               className={wrapperClass || (data && data.wrapperClass)}

@@ -21,7 +21,7 @@ const CheckBox = ({
     <Fragment>
       <Field name={name || (data && data.name)}>
         {({ field, meta }) => {
-          //console.log(data.readOnly);
+  
           return (
             <div
               className={wrapperClass || (data && data.wrapperClass)}

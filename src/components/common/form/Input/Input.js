@@ -20,7 +20,7 @@ const InputCoustom = (
   },
   props
 ) => {
-  //console.log(data.type);
+  
   return (
     <Fragment>
       <Field name={name || (data && data.name)}>

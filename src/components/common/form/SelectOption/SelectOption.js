@@ -41,7 +41,7 @@ const SelectOption = ({
                   className={inputClass || (data && data.inputClass)}
                   onChange={(e) => {
                     if (e.target.value == 'انتخاب کنید') {
-                      console.log(e.target.value);
+                      
                       setFieldValue(data && data.name, '');
                     } else {
                       setFieldValue(data && data.name, e.target.value);
@@ -71,7 +71,7 @@ const SelectOption = ({
 
                 <ErrorMessage name={name || (data && data.name)}>
                   {(msg) => {
-                    console.log(msg);
+                  
                     return (
                       <p
                         className={errorClass || (data && data.errorClass)}
