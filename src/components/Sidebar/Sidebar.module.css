@@ -35,8 +35,8 @@
 }
 
 .backButton{
-  text-align: right;
-  padding-right: 1.5rem;
+  text-align: right !important;
+  padding-right: 1.5rem !important;
 }
 
 .backButton span{
