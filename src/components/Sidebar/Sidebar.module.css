@@ -28,3 +28,17 @@
   border-right: 4px solid white;
   background-color: #3e4049;
 }
+
+.icons{
+  margin-left: 1rem;
+  margin-top: 5px;
+}
+
+.backButton{
+  text-align: right;
+  padding-right: 1.5rem;
+}
+
+.backButton span{
+  margin-right: 1rem;
+}

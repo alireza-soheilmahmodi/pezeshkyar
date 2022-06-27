@@ -1,0 +1,46 @@
+.title {
+  display: block;
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.3rem 0;
+  font-size: 1.4rem;
+  margin: 3rem auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  
+}
+
+.body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.icons{
+  margin-left: 1rem;
+  margin-top: 5px;
+  font-size: 1.5rem;
+}
+
+.Button{
+  display: flex;
+  text-decoration: none;
+  width: 30%;
+  margin: 1rem 2rem ;  
+
+}
+
+.Button button{
+ width: 100%;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

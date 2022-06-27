@@ -7,11 +7,14 @@ import PatientPage from '../PatientPage/PatientPage';
 import FormGetter from '../forms/FormGetter/FormGetter';
 import { FormSetter } from '../forms/formSetter/FormSetter';
 import Missing from '../missing/Missing';
+import Home from '../Home/Home';
 
 const MyApp = () => {
   return (
     <Routes>
       <Route path="/" element={<MyAppLayout />}>
+        <Route path="home" element={<Home />} />
+
         <Route path="patients" element={<Patients />} />
 
         <Route path="patients/:id" element={<PatientPage />} />
