@@ -1,0 +1,15 @@
+.button {
+  padding: 10px;
+  position: relative;
+  background-color: #ccc;
+  width: 50%;
+  right: 50%;
+  transform: translateX(50%);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.svg {
+  position: relative;
+  margin-right: -35px;
+}

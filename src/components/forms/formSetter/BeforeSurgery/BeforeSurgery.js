@@ -80,7 +80,7 @@ const BeforeSurgery = () => {
     };
 
     try {
-      const res = await axios.post('forms/before_surgery/', RightModel);
+      await axios.post('forms/before_surgery/', RightModel);
       toast.success('اطلاعات چشم راست با موفقیت ثبت شد');
     } catch (err) {
       console.log(err);
@@ -110,7 +110,7 @@ const BeforeSurgery = () => {
     };
 
     try {
-      const res = await axios.post('forms/before_surgery/', LeftModel);
+      await axios.post('forms/before_surgery/', LeftModel);
       toast.success('اطلاعات چشم چپ با موفقیت ثبت شد');
     } catch (err) {
       console.log(err);

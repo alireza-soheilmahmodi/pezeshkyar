@@ -10,6 +10,7 @@ const FormFiled = ({ label, value, borderColor = 'black', width }) => {
         <label className={Style.label}>{label}</label>
         <div
           style={{
+            direction: 'ltr',
             textAlign: 'center',
             color: value == null ? 'red' : 'black',
           }}

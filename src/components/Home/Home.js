@@ -10,7 +10,7 @@ import {
 const Home = () => {
   return (
     <div className="card bg-dark w-75">
-      <img src={img} class="card-img-top"></img>
+      <img src={img} className="card-img-top"></img>
       <div className={`${Style.container} card-img-overlay`}>
         <h3 className={Style.title}>به سامانه پزشک یار خوش آمدید!</h3>
         <div className={Style.body}>
