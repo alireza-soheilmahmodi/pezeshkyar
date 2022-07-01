@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import MyAppLayout from '../MyAppLayout/MyAppLayout';
 import Patients from '../Patients/Patients';
-import CreateFile from '../CreateFile/CreateFile';
+import CreateFile from '../forms/formSetter/CreateFile/CreateFile';
 import AddVisit from '../AddVisit/AddVisit';
 import PatientPage from '../PatientPage/PatientPage';
 import FormGetter from '../forms/FormGetter/FormGetter';

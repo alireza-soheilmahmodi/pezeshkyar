@@ -62,6 +62,16 @@ const PatientSearchBox = () => {
             </Link>
           </li>
         ))}
+        {result.length > 0 && (
+          <li className="list-group-item bg-info ">
+            <Link
+              to={'/app/createFile'}
+              className={`${Style.link} ${Style.createFileB}`}
+            >
+              تشکیل پرونده
+            </Link>
+          </li>
+        )}
       </ul>
     </section>
   );
