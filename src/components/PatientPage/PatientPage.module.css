@@ -41,6 +41,11 @@
   justify-content: center;
 }
 
+.header li{
+  background-color: black;
+  color: white;
+}
+
 .addFormButton {
   text-decoration: none;
 }

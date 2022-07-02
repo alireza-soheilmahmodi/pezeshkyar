@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Field, ErrorMessage } from "formik";
-import DatePicker from "react-multi-date-picker";
-import persian_fa from "react-date-object/locales/persian_fa";
-import persian from "react-date-object/calendars/persian";
+import React, { Fragment } from 'react';
+import { Field, ErrorMessage } from 'formik';
+import DatePicker from 'react-multi-date-picker';
+import persian_fa from 'react-date-object/locales/persian_fa';
+import persian from 'react-date-object/calendars/persian';
 
 const DateInput = (
   {
@@ -60,7 +60,7 @@ const DateInput = (
                 {(msg) => (
                   <p
                     className={errorClass || (data && data.errorClass)}
-                    style={{ color: "red" }}
+                    style={{ color: 'red' }}
                   >
                     {msg}
                   </p>

@@ -84,7 +84,7 @@ const AddVisit = () => {
       <section className={Style.inputSection}>
         <label>بیمار:</label>
 
-        <form>
+        <form className={Style.inputForm}>
           <input
             ref={inputRef}
             type="text"
@@ -108,20 +108,21 @@ const AddVisit = () => {
             </li>
           ))}
       </ul>
-
-      <select
-        onChange={(e) => handleDropDown(e)}
-        className={`${Style.dropDown}`}
-      >
-        <option value={null}>انتخاب کنید</option>
-        {doctorList.map((item) => (
-          <option
-            value={item.id}
-            key={item.id}
-          >{`${item.name} ${item.lastName}`}</option>
-        ))}
-      </select>
-
+      <div className={Style.selectDoctor}>
+        <label>دکتر:</label>
+        <select
+          onChange={(e) => handleDropDown(e)}
+          className={`${Style.dropDown}`}
+        >
+          <option value={null}>انتخاب کنید</option>
+          {doctorList.map((item) => (
+            <option
+              value={item.id}
+              key={item.id}
+            >{`${item.name} ${item.lastName}`}</option>
+          ))}
+        </select>
+      </div>
       <button className={`${Style.jfButton}`} onClick={doSubmit}>
         ثبت
       </button>

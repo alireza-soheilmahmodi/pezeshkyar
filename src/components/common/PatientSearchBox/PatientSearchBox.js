@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Style from './PatientSearchBox.module.css';
 import { usePatientSearch } from '../../../hooks/usePatientSearch';
@@ -6,19 +6,24 @@ import { usePatientSearch } from '../../../hooks/usePatientSearch';
 const PatientSearchBox = () => {
   const [name, setName] = useState('');
   const result = usePatientSearch(name);
-
+  const inputRef = useRef();
   const location = useLocation();
 
   const handleChange = (e) => {
     setName(e.target.value);
   };
 
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
     <section className={Style.container}>
       <label> جستجوی بیمار</label>
 
-      <form>
+      <form className={Style.searchField}>
         <input
+          ref={inputRef}
           type="text"
           required
           onChange={(e) => handleChange(e)}
@@ -35,7 +40,7 @@ const PatientSearchBox = () => {
           </li>
         ))}
         {result.length > 0 && (
-          <li className="list-group-item bg-info ">
+          <li className="list-group-item bg-primary ">
             <Link
               to={'/app/createFile'}
               className={`${Style.link} ${Style.createFileB}`}

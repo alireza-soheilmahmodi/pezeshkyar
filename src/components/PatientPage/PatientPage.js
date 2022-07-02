@@ -9,6 +9,8 @@ import patientFormsLabel from '../../utils/patientFormsLabel';
 import Loading from '../common/Loading/Loading';
 import { Link } from 'react-router-dom';
 
+import { FaEye } from 'react-icons/fa';
+
 const PatientPage = () => {
   const { id } = useParams();
 
@@ -73,7 +75,7 @@ const PatientPage = () => {
         <h2>فرم های بیمار</h2>
         {Object.entries(patientFormsLabel).map(([key, label]) => (
           <FormWrapper label={label} key={key} borderColor="#20b534">
-            <ul className={Style.formRow}>
+            <ul className={`${Style.formRow} ${Style.header}`}>
               <li>تاریخ و ساعت</li>
               <li>چشم</li>
               <li>مشخصات دکتر</li>
@@ -95,7 +97,9 @@ const PatientPage = () => {
                       item?.doctor?.user?.last_name}
                   </li>
                   <li>
-                    <Link to={`/app/form/get${url}`}>مشاهده</Link>
+                    <Link to={`/app/form/get${url}`}>
+                      <FaEye style={{ color: 'grey' }} />
+                    </Link>
                   </li>
                 </ul>
               );
