@@ -8,9 +8,9 @@ import patientDataLabels from '../../utils/patientDataLabels';
 import patientFormsLabel from '../../utils/patientFormsLabel';
 import Loading from '../common/Loading/Loading';
 import { Link } from 'react-router-dom';
+import DeleteFormModal from '../forms/formSetter/DeleteFormModal/DeleteFormModal';
 
-import { FaEye } from 'react-icons/fa';
-
+import { FaEye, FaTrash } from 'react-icons/fa';
 const PatientPage = () => {
   const { id } = useParams();
 
@@ -20,6 +20,9 @@ const PatientPage = () => {
   const axios = useAxios();
   const [isLoading, setIsLoading] = useState(true);
   const [patientInfoExpand, setPatientInfoExpand] = useState(false);
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [deleteFormUrl, setDeleteFormUrl] = useState('');
 
   useEffect(() => {
     const getPatientInfo = async () => {
@@ -40,7 +43,7 @@ const PatientPage = () => {
     };
 
     getPatientInfo();
-  }, []);
+  }, [modalIsOpen]);
 
   if (isLoading) {
     return <Loading />;
@@ -96,10 +99,18 @@ const PatientPage = () => {
                       ' ' +
                       item?.doctor?.user?.last_name}
                   </li>
-                  <li>
+                  <li className={Style.details}>
                     <Link to={`/app/form/get${url}`}>
-                      <FaEye style={{ color: 'grey' }} />
+                      <FaEye className={Style.deleteButton} />
                     </Link>
+
+                    <FaTrash
+                      className={Style.deleteButton}
+                      onClick={() => {
+                        setModalIsOpen(true);
+                        setDeleteFormUrl(url);
+                      }}
+                    />
                   </li>
                 </ul>
               );
@@ -116,6 +127,10 @@ const PatientPage = () => {
           </FormWrapper>
         ))}
       </div>
+
+      {modalIsOpen && (
+        <DeleteFormModal setIsOpen={setModalIsOpen} formUrl={deleteFormUrl} />
+      )}
     </div>
   );
 };

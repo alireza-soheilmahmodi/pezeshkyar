@@ -56,6 +56,10 @@ const AddVisit = () => {
   }, []);
 
   useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  useEffect(() => {
     if (patient) {
       inputRef.current.value = `${patient.first_name} ${patient.last_name}`;
     }
