@@ -9,8 +9,8 @@ import patientFormsLabel from '../../utils/patientFormsLabel';
 import Loading from '../common/Loading/Loading';
 import { Link } from 'react-router-dom';
 import DeleteFormModal from '../forms/formSetter/DeleteFormModal/DeleteFormModal';
+import { FaEye, FaTrash, FaEdit } from 'react-icons/fa';
 
-import { FaEye, FaTrash } from 'react-icons/fa';
 const PatientPage = () => {
   const { id } = useParams();
 
@@ -54,7 +54,7 @@ const PatientPage = () => {
       <FormWrapper label="اطلاعات بیمار" borderColor="#4351ff">
         <div
           className={Style.InfoWrapper}
-          style={{ maxHeight: patientInfoExpand ? '1000px' : '370px' }}
+          style={{ maxHeight: patientInfoExpand ? '1200px' : '370px' }}
         >
           {Object.entries(patientDataLabels).map(([key, label]) => (
             <FormField
@@ -101,16 +101,20 @@ const PatientPage = () => {
                   </li>
                   <li className={Style.details}>
                     <Link to={`/app/form/get${url}`}>
-                      <FaEye className={Style.deleteButton} />
+                      <FaEye className={Style.detailButtons} />
                     </Link>
 
                     <FaTrash
-                      className={Style.deleteButton}
+                      className={Style.detailButtons}
                       onClick={() => {
                         setModalIsOpen(true);
                         setDeleteFormUrl(url);
                       }}
                     />
+
+                    <Link to={`/app/form/edit${url}`}>
+                      <FaEdit className={Style.detailButtons} />
+                    </Link>
                   </li>
                 </ul>
               );

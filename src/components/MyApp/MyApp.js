@@ -6,6 +6,7 @@ import AddVisit from '../AddVisit/AddVisit';
 import PatientPage from '../PatientPage/PatientPage';
 import FormGetter from '../forms/FormGetter/FormGetter';
 import { FormSetter } from '../forms/formSetter/FormSetter';
+import FormEdit from '../forms/formEdit/FormEdit';
 import Missing from '../missing/Missing';
 import Home from '../Home/Home';
 
@@ -22,6 +23,8 @@ const MyApp = () => {
         <Route path="form/get/:formType/:id" element={<FormGetter />} />
 
         <Route path="form/set/*" element={<FormSetter />} />
+
+        <Route path="form/edit/*" element={<FormEdit />} />
 
         <Route path="createFile" element={<CreateFile />} />
 

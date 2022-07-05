@@ -39,7 +39,7 @@ const AddVisit = () => {
           return {
             name: item?.user?.first_name,
             lastName: item?.user?.last_name,
-            id: item?.user?.id,
+            id: item?.id,
           };
         });
         setDoctorList(doctorsList);
@@ -74,7 +74,6 @@ const AddVisit = () => {
       patient: patient.id,
       doctor: parseInt(doctor),
     };
-    console.log(model);
     try {
       await axios.post('visits/', model);
       toast.success('ویزیت با موفقیت ثبت شد');

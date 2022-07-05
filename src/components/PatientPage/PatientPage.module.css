@@ -31,9 +31,7 @@
   display: flex;
 }
 
-.deleteButton{
-  color: black;
-}
+
 
 .formRow li {
   display: flex;
@@ -65,8 +63,10 @@
   width: 40%;
 }
 
-.deleteButton{
+
+.detailButtons{
   cursor:pointer;
+  color: black;
 }
 
 .details > *{

@@ -25,11 +25,12 @@ export const useAfterSurgery = (patient_national_id) => {
         }
       }
     };
-
-    getVisits();
+    if (patient_national_id) {
+      getVisits();
+    }
   }, []);
 
-  if (visitData.length == 0) return null;
+  if (visitData.length == 0 && patient_national_id) return null;
   return {
     RightModel: [
       {

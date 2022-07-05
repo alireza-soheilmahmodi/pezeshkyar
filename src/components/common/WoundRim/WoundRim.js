@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './WoundRim.module.css';
-export default function WoundRim({ clickHandler }) {
-  const [wr, setWr] = useState('00000000');
+export default function WoundRim({ clickHandler, wound }) {
+  const [wr, setWr] = useState(wound || '00000000');
   let primary_color = 'rgba(219 , 251, 38 , 1)'; //part color
   let eclipse_background = 'rgb(242, 242, 242)'; // eclipse background
   let hover_color = 'orange'; // hover color
@@ -11,6 +11,15 @@ export default function WoundRim({ clickHandler }) {
     if (index > str.length - 1) return str;
     return str.substring(0, index) + chr + str.substring(index + 1);
   }
+
+  useEffect(() => {
+    for (let i = 0; i < wr.length; i++) {
+      if (wr[i] == 1) {
+        const element = document.getElementById(`svg_${i + 1}`);
+        element.setAttribute('fill', second_color);
+      }
+    }
+  }, []);
 
   function click(e, i) {
     let element = e.target;
@@ -47,7 +56,7 @@ export default function WoundRim({ clickHandler }) {
         className={styles.svg}
         width="800"
         height="200"
-        viewBox="0 180 800 200"
+        viewBox="0 160 800 200"
         xmlns="http://www.w3.org/2000/svg"
       >
         <g>
@@ -154,13 +163,15 @@ export default function WoundRim({ clickHandler }) {
           </filter>
         </defs>
       </svg>
-      <button
-        type="button"
-        className={styles.button}
-        onClick={() => clickHandler(wr)}
-      >
-        تایید
-      </button>
+      <div>
+        <button
+          type="button"
+          className={styles.button}
+          onClick={() => clickHandler(wr)}
+        >
+          تایید
+        </button>
+      </div>
     </>
   );
 }
