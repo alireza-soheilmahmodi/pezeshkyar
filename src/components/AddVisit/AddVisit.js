@@ -4,6 +4,7 @@ import { usePatientSearch } from '../../hooks/usePatientSearch';
 import { useEffect } from 'react';
 import useAxios from '../../hooks/useAxios';
 import { toast } from 'react-toastify';
+import Loading from '../common/Loading/Loading';
 
 const AddVisit = () => {
   const [name, setName] = useState('');
@@ -12,7 +13,7 @@ const AddVisit = () => {
   const inputRef = useRef();
   const [doctorList, setDoctorList] = useState([]);
   const [doctor, setDoctor] = useState();
-  const result = usePatientSearch(name);
+  const [result, loaddingResult] = usePatientSearch(name);
 
   const axios = useAxios();
 
@@ -100,6 +101,7 @@ const AddVisit = () => {
 
       <ul className={`list-group ${Style.resultContainer}`}>
         {showPatientList &&
+          !loaddingResult &&
           result.map((item) => (
             <li className={`${Style.paLi} list-group-item`} key={item.id}>
               <button
@@ -110,6 +112,22 @@ const AddVisit = () => {
               </button>
             </li>
           ))}
+
+        {showPatientList &&
+          loaddingResult &&
+          inputRef.current?.value?.length > 0 && (
+            <li className={`${Style.paLi} list-group-item`}>
+              <div className="d-flex justify-content-center p-3">
+                <Loading />
+              </div>
+            </li>
+          )}
+
+        {showPatientList && !loaddingResult && result.length == 0 && (
+          <div className="d-flex justify-content-center p-3 text-danger">
+            <p>موردی یافت نشد</p>
+          </div>
+        )}
       </ul>
       <div className={Style.selectDoctor}>
         <label>دکتر:</label>

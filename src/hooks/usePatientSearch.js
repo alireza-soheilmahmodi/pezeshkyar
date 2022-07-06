@@ -1,20 +1,27 @@
 import useAxios from './useAxios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useDeferredValue } from 'react';
+
 export const usePatientSearch = (name) => {
+  const deferredName = useDeferredValue(name);
   const [result, setResult] = useState([]);
   const axios = useAxios();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let componentMounted = true;
+    setLoading(true);
     const getPatients = async () => {
-      if (name.length === 0) {
+      if (deferredName.length === 0) {
         setResult([]);
         return;
       }
       try {
-        const responseResult = await axios.get('patients/?search=' + name);
+        const responseResult = await axios.get(
+          'patients/?search=' + deferredName
+        );
         if (componentMounted) {
           setResult(responseResult?.data?.results);
+          setLoading(false);
         }
       } catch (error) {
         if (error.response) {
@@ -30,6 +37,6 @@ export const usePatientSearch = (name) => {
     return () => {
       componentMounted = false;
     };
-  }, [name]);
-  return result;
+  }, [deferredName]);
+  return [result, loading];
 };

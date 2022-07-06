@@ -76,7 +76,7 @@ const PatientPage = () => {
 
       <div className={Style.form}>
         <h2>فرم های بیمار</h2>
-        {Object.entries(patientFormsLabel).map(([key, label]) => (
+        {Object.entries(patientFormsLabel).map(([key, label], formIndex) => (
           <FormWrapper label={label} key={key} borderColor="#20b534">
             <ul className={`${Style.formRow} ${Style.header}`}>
               <li>تاریخ و ساعت</li>
@@ -111,23 +111,25 @@ const PatientPage = () => {
                         setDeleteFormUrl(url);
                       }}
                     />
-
-                    <Link to={`/app/form/edit${url}`}>
-                      <FaEdit className={Style.detailButtons} />
-                    </Link>
+                    {formIndex > 3 && (
+                      <Link to={`/app/form/edit${url}`}>
+                        <FaEdit className={Style.detailButtons} />
+                      </Link>
+                    )}
                   </li>
                 </ul>
               );
             })}
-
-            <Link
-              className={Style.addFormButton}
-              to={`/app/form/set/${key}/${patientInfo.national_id}`}
-            >
-              <button className="btn btn-success btn-lg btn-block">
-                افزودن فرم
-              </button>
-            </Link>
+            {formIndex > 3 && (
+              <Link
+                className={Style.addFormButton}
+                to={`/app/form/set/${key}/${patientInfo.national_id}`}
+              >
+                <button className="btn btn-success btn-lg btn-block">
+                  افزودن فرم
+                </button>
+              </Link>
+            )}
           </FormWrapper>
         ))}
       </div>
