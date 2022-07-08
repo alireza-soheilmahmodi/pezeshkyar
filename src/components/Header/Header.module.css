@@ -1,0 +1,43 @@
+.header{
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  background-color: #e1e1e1;
+  border-bottom: 2px solid gray;
+}
+.navigations{
+  display: flex;
+  height: 100%;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0 1rem;
+  align-items: center;
+ 
+}
+.navigations > button{
+  border:none;
+  display: flex;
+  width: 2.7rem;
+  height: 2.7rem;
+  background-color: #363740;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #e1e1e1;
+  font-size: 1.5rem;
+}
+
+
+
+
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 100%;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #363740;
+  margin-top: 3px;
+}

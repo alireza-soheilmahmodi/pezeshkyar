@@ -7,7 +7,7 @@ import axios from '../../api/axios';
 const LOGIN_URL = '/auth/token/login/';
 
 const Login = () => {
-  const { auth, setAuth } = useAuth();
+  const { setAuth } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,7 +21,13 @@ const Login = () => {
   const [errMsg, setErrMsg] = useState('');
 
   useEffect(() => {
-    userRef.current.focus();
+    const auth = localStorage.getItem('auth');
+    if (auth) {
+      setAuth(JSON.parse(auth));
+      navigate(from, { replace: true });
+    } else {
+      userRef.current.focus();
+    }
   }, []);
 
   useEffect(() => {
@@ -38,6 +44,7 @@ const Login = () => {
       });
       const accessToken = response?.data?.auth_token;
       setAuth({ accessToken });
+      localStorage.setItem('auth', JSON.stringify({ accessToken }));
 
       setUser('');
       setPwd('');
@@ -53,6 +60,8 @@ const Login = () => {
       errRef.current.focus();
     }
   };
+
+  if (localStorage.getItem('auth')) return;
 
   return (
     <div className={loginStyle.loginContainer}>

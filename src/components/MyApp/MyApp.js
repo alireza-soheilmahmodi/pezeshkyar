@@ -9,6 +9,7 @@ import { FormSetter } from '../forms/formSetter/FormSetter';
 import FormEdit from '../forms/formEdit/FormEdit';
 import Missing from '../missing/Missing';
 import Home from '../Home/Home';
+import { Logout } from '../Logout/Logout';
 
 const MyApp = () => {
   return (
@@ -29,6 +30,8 @@ const MyApp = () => {
         <Route path="createFile" element={<CreateFile />} />
 
         <Route path="addVisit" element={<AddVisit />} />
+
+        <Route path="logout" element={<Logout />} />
 
         <Route path="*" element={<Missing />} />
       </Route>

@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Style from './Sidebar.module.css';
 import { useState, useEffect } from 'react';
 import useAxios from '../../hooks/useAxios';
@@ -8,17 +8,15 @@ import {
   FaMarker,
   FaSignOutAlt,
   FaHome,
-  FaArrowAltCircleLeft,
 } from 'react-icons/fa';
 
 const Sidebar = () => {
-  const navigate = useNavigate();
   const axios = useAxios();
   const [name, setName] = useState('');
 
   let activeStyle = {
     color: '#dde2ff',
-    borderRight: '4px solid white',
+    borderRight: '8px solid white',
     backgroundColor: '#3e4049',
   };
 
@@ -47,14 +45,6 @@ const Sidebar = () => {
     <div className={`col-md-3 col-lg-2 d-none d-md-block ${Style.right}`}>
       <label>{name}</label>
       <ul className="nav flex-column">
-        <button
-          onClick={() => navigate(-1)}
-          className={`${Style.backButton} btn btn-primary btn-lg btn-block mb-5`}
-        >
-          <FaArrowAltCircleLeft />
-          <span>بازگشت</span>
-        </button>
-
         <li className="nav-item">
           <NavLink
             end

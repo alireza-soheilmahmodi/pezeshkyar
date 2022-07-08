@@ -22,7 +22,7 @@ const PatientSearchBox = () => {
     <section className={Style.container}>
       <label> جستجوی بیمار</label>
 
-      <form className={Style.searchField}>
+      <form className={Style.searchField} onSubmit={(e) => e.preventDefault()}>
         <input
           ref={inputRef}
           type="text"
