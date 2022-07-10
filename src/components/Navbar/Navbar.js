@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar navbar-dark bg-dark d-block d-md-none">
       <div className="container-fluid">
         <Link to={'/'} className="navbar-brand">
-          علیرضا محمودی
+          <span>سامانه پزشک یار</span>
         </Link>
         <button
           className="navbar-toggler"
@@ -31,17 +31,17 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={'/'} className="nav-link">
+              <Link to={'/app/createFile'} className="nav-link">
                 تشکیل پرونده
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={'/'} className="nav-link">
+              <Link to={'/app/addVisit'} className="nav-link">
                 افزودن ویزیت
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={'/'} className="nav-link">
+              <Link to={'/app/logout'} className="nav-link">
                 خروج
               </Link>
             </li>

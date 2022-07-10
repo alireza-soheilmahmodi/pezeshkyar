@@ -42,7 +42,10 @@ export const useExaminationsSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
         options: visitData,
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -85,6 +88,9 @@ export const useExaminationsSurgery = (patient_national_id) => {
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
         options: ['Attend', 'Fellow', 'Resident'],
         readOnly: false,
       },
@@ -96,7 +102,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         titleStyle: {
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '10px',
         },
@@ -117,7 +123,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         titleStyle: {
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '10px',
         },
@@ -142,6 +148,10 @@ export const useExaminationsSurgery = (patient_national_id) => {
         wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
+          marginBottom: '20px',
+        },
+        inputStyle: {
+          width: '50%',
         },
         options: ['IOL master', 'A-scan', 'others'],
         readOnly: false,
@@ -152,6 +162,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         title: 'Axial length :',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -174,6 +185,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         title: 'K1 : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -196,6 +208,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         title: 'K2 : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -221,9 +234,12 @@ export const useExaminationsSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
+        },
+        inputStyle: {
+          width: '50%',
         },
         options: [
           'lensx',
@@ -243,9 +259,12 @@ export const useExaminationsSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
+        },
+        inputStyle: {
+          width: '50%',
         },
         options: [
           'Phimosis',
@@ -295,9 +314,12 @@ export const useExaminationsSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
+        },
+        inputStyle: {
+          width: '50%',
         },
         options: [
           'foldable IOL in bag',
@@ -317,9 +339,12 @@ export const useExaminationsSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
+        },
+        inputStyle: {
+          width: '50%',
         },
         options: [
           {
@@ -358,6 +383,9 @@ export const useExaminationsSurgery = (patient_national_id) => {
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
         options: ['superior', 'temporal - corneal', 'scleral'],
         readOnly: false,
       },
@@ -386,7 +414,10 @@ export const useExaminationsSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
         options: visitData,
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -429,6 +460,9 @@ export const useExaminationsSurgery = (patient_national_id) => {
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
         options: ['Attend', 'Fellow', 'Resident'],
         readOnly: false,
       },
@@ -440,7 +474,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         titleStyle: {
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '10px',
         },
@@ -461,7 +495,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         titleStyle: {
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '10px',
         },
@@ -486,6 +520,10 @@ export const useExaminationsSurgery = (patient_national_id) => {
         wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
+          marginBottom: '20px',
+        },
+        inputStyle: {
+          width: '50%',
         },
         options: ['IOL master', 'A-scan', 'others'],
         readOnly: false,
@@ -496,6 +534,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         title: 'Axial length :',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -518,6 +557,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         title: 'K1 : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -540,6 +580,7 @@ export const useExaminationsSurgery = (patient_national_id) => {
         title: 'K2 : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -565,10 +606,14 @@ export const useExaminationsSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           'lensx',
           'lensx + Ant vitx',
@@ -587,10 +632,14 @@ export const useExaminationsSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           'Phimosis',
           'VAO',
@@ -639,10 +688,14 @@ export const useExaminationsSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           'foldable IOL in bag',
           '3-piece IOL in sulcus',
@@ -661,10 +714,14 @@ export const useExaminationsSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           {
             value: 1,
@@ -702,6 +759,10 @@ export const useExaminationsSurgery = (patient_national_id) => {
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['superior', 'temporal - corneal', 'scleral'],
         readOnly: false,
       },

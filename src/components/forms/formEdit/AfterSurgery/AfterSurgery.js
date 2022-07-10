@@ -122,7 +122,7 @@ const AfterSurgery = () => {
   return (
     <div className={Style.container}>
       <div
-        className="col-12 m-auto form-max-width row"
+        className="col-8 m-auto form-max-width row"
         style={{
           boxShadow: '0 0 10px 1px #ccc',
           background: '#f2f2f2',

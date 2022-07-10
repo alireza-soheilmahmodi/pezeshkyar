@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Style from './Sidebar.module.css';
-import { useState, useEffect } from 'react';
-import useAxios from '../../hooks/useAxios';
+import { BsVectorPen } from 'react-icons/bs';
+
 import {
   FaSearch,
   FaFileMedical,
@@ -11,39 +11,19 @@ import {
 } from 'react-icons/fa';
 
 const Sidebar = () => {
-  const axios = useAxios();
-  const [name, setName] = useState('');
-
   let activeStyle = {
     color: '#dde2ff',
     borderRight: '8px solid white',
     backgroundColor: '#3e4049',
   };
 
-  useEffect(() => {
-    const getName = async () => {
-      try {
-        const doctor = await axios.get('auth/users/me/');
-        const doctorDetail = await axios.get(`doctors/${doctor.data.id}`);
-
-        setName(
-          `${doctorDetail?.data?.user?.first_name} ${doctorDetail?.data?.user?.last_name}`
-        );
-      } catch (error) {
-        if (error.response) {
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        }
-      }
-    };
-
-    getName();
-  }, []);
-
   return (
     <div className={`col-md-3 col-lg-2 d-none d-md-block ${Style.right}`}>
-      <label>{name}</label>
+      <div className={Style.logo}>
+        <BsVectorPen />
+        <span>سامانه پزشک یار</span>
+      </div>
+
       <ul className="nav flex-column">
         <li className="nav-item">
           <NavLink

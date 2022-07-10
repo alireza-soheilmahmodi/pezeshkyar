@@ -41,7 +41,10 @@ export const useBeforeSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
         options: visitData,
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -63,7 +66,7 @@ export const useBeforeSurgery = (patient_national_id) => {
         titleStyle: {
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '15px',
         },
@@ -84,7 +87,11 @@ export const useBeforeSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['NLP', 'LP', 'HM', 'CF50cm', 'CF1m', 'CF2m', 'Other'],
         inputClass: '',
         optionItemClass: '',
@@ -225,10 +232,14 @@ export const useBeforeSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '8px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['خوب', 'متوسط', 'ضعیف', 'ندارد'],
         inputClass: '',
         optionItemClass: '',
@@ -252,6 +263,7 @@ export const useBeforeSurgery = (patient_national_id) => {
         title: 'Axis : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -274,6 +286,7 @@ export const useBeforeSurgery = (patient_national_id) => {
         title: 'Cylinder : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -296,6 +309,7 @@ export const useBeforeSurgery = (patient_national_id) => {
         title: 'Sphere : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -364,7 +378,10 @@ export const useBeforeSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
+        inputStyle: {
+          width: '50%',
+        },
         wrapperStyle: {
           marginTop: '20px',
         },
@@ -389,7 +406,10 @@ export const useBeforeSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
+        inputStyle: {
+          width: '50%',
+        },
         wrapperStyle: {
           marginTop: '20px',
         },
@@ -430,7 +450,10 @@ export const useBeforeSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
+        inputStyle: {
+          width: '50%',
+        },
         wrapperStyle: {
           marginTop: '20px',
         },
@@ -467,7 +490,10 @@ export const useBeforeSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
         options: visitData,
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -489,7 +515,7 @@ export const useBeforeSurgery = (patient_national_id) => {
         titleStyle: {
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '15px',
         },
@@ -510,7 +536,10 @@ export const useBeforeSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
+        inputStyle: {
+          width: '50%',
+        },
         options: ['NLP', 'LP', 'HM', 'CF50cm', 'CF1m', 'CF2m', 'Other'],
         inputClass: '',
         optionItemClass: '',
@@ -651,7 +680,10 @@ export const useBeforeSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '8px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
+        inputStyle: {
+          width: '50%',
+        },
         wrapperStyle: {
           marginTop: '20px',
         },
@@ -678,6 +710,7 @@ export const useBeforeSurgery = (patient_national_id) => {
         title: 'Axis : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -700,6 +733,7 @@ export const useBeforeSurgery = (patient_national_id) => {
         title: 'Cylinder : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -722,6 +756,7 @@ export const useBeforeSurgery = (patient_national_id) => {
         title: 'Sphere : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -790,10 +825,14 @@ export const useBeforeSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           'نوکلئار',
           'لاملار',
@@ -815,10 +854,14 @@ export const useBeforeSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           'نرمال',
           'میکروکورنه',
@@ -856,10 +899,14 @@ export const useBeforeSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['نرمال', 'ROP', 'سایر'],
         inputClass: '',
         optionItemClass: '',

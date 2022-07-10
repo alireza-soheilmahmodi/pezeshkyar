@@ -41,7 +41,11 @@ export const useChildren = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
+
         options: visitData,
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -56,10 +60,14 @@ export const useChildren = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['طبیعی', 'اپاسیته پریفرال', 'اپاسیته سنترال', 'ادم ', 'سایر'],
         readOnly: false,
       },
@@ -98,6 +106,10 @@ export const useChildren = (patient_national_id) => {
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['طبیعی', 'دیسژنزی'],
         readOnly: false,
       },
@@ -153,6 +165,10 @@ export const useChildren = (patient_national_id) => {
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           {
             value: 1,
@@ -174,10 +190,14 @@ export const useChildren = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           {
             value: 1,
@@ -242,6 +262,7 @@ export const useChildren = (patient_national_id) => {
         title: 'Axis* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -264,6 +285,7 @@ export const useChildren = (patient_national_id) => {
         title: 'Cylinder* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -286,11 +308,13 @@ export const useChildren = (patient_national_id) => {
         title: 'Sphere* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
         wrapperStyle: {
           marginTop: '10px',
+          marginBottom: '15px',
         },
         inputClass: '',
         inputStyle: {
@@ -312,7 +336,11 @@ export const useChildren = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
+
         options: visitData,
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -327,10 +355,14 @@ export const useChildren = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['طبیعی', 'اپاسیته پریفرال', 'اپاسیته سنترال', 'ادم ', 'سایر'],
         readOnly: false,
       },
@@ -369,6 +401,10 @@ export const useChildren = (patient_national_id) => {
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['طبیعی', 'دیسژنزی'],
         readOnly: false,
       },
@@ -424,6 +460,10 @@ export const useChildren = (patient_national_id) => {
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           {
             value: 1,
@@ -445,10 +485,14 @@ export const useChildren = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           {
             value: 1,
@@ -513,6 +557,7 @@ export const useChildren = (patient_national_id) => {
         title: 'Axis* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -535,6 +580,7 @@ export const useChildren = (patient_national_id) => {
         title: 'Cylinder* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -557,11 +603,13 @@ export const useChildren = (patient_national_id) => {
         title: 'Sphere* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
         wrapperStyle: {
           marginTop: '10px',
+          marginBottom: '15px',
         },
         inputClass: '',
         inputStyle: {

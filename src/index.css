@@ -14,3 +14,21 @@
   font-family: 'B-Nazanin';
   font-size: 1.3rem;
 }
+
+select{
+  display: block;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: white;
+}
+
+textarea{
+  width: 100%;
+  height: 10rem;
+}
+
+input[type='text']{
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: block;
+}

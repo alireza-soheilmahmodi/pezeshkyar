@@ -149,7 +149,7 @@ const BeforeSurgery = () => {
                 }}
               >
                 <br />
-                <h2 className="mt-5"> چشم راست OD</h2>
+                <h2 className="mt-5">چشم راست</h2>
                 <br />
                 <InputMaker data={data.RightEye} />
               </div>
@@ -183,7 +183,7 @@ const BeforeSurgery = () => {
                 }}
               >
                 <br />
-                <h2 className="mt-5"> چشم راست OD</h2>
+                <h2 className="mt-5">چشم چپ</h2>
                 <br />
                 <InputMaker data={data.LeftEye} />
               </div>

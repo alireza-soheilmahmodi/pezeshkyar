@@ -131,7 +131,7 @@ const ExaminationsSurgery = () => {
           background: '#f2f2f2',
         }}
       >
-        <div className="col-md-12">
+        <div className="col-md-8 m-auto">
           <Formik
             initialValues={formValues}
             enableReinitialize={true}

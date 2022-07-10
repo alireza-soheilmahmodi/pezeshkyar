@@ -41,7 +41,11 @@ export const useAfterSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
+
         options: visitData,
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -53,10 +57,11 @@ export const useAfterSurgery = (patient_national_id) => {
         title: ' تاریخ ویزیت بعدی*  :',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           color: 'rgb(81, 84, 252)',
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
@@ -88,6 +93,7 @@ export const useAfterSurgery = (patient_national_id) => {
         title: 'Axis* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -110,6 +116,7 @@ export const useAfterSurgery = (patient_national_id) => {
         title: 'Cylinder* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -132,6 +139,7 @@ export const useAfterSurgery = (patient_national_id) => {
         title: 'Sphere* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -270,7 +278,7 @@ export const useAfterSurgery = (patient_national_id) => {
         titleStyle: {
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
@@ -291,7 +299,10 @@ export const useAfterSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
         options: ['NLP', 'LP', 'HM', 'CF50cm', 'CF1m', 'CF2m', 'Other'],
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -306,10 +317,14 @@ export const useAfterSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '8px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['airpuff', 'goldman', 'Schiotz', 'tonopen'],
         inputClass: '',
         optionItemClass: '',
@@ -404,10 +419,14 @@ export const useAfterSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '8px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
+        inputStyle: {
+          width: '50%',
+        },
+
         options: [
           'Hyphema',
           'Iris defect',
@@ -535,7 +554,11 @@ export const useAfterSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
+
         options: visitData,
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -582,6 +605,7 @@ export const useAfterSurgery = (patient_national_id) => {
         title: 'Axis* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -604,6 +628,7 @@ export const useAfterSurgery = (patient_national_id) => {
         title: 'Cylinder* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -626,6 +651,7 @@ export const useAfterSurgery = (patient_national_id) => {
         title: 'Sphere* : ',
         titleClass: 'input-help text-right',
         titleStyle: {
+          display: 'block',
           marginBottom: '12px',
         },
         wrapperClass: 'input-block col-4',
@@ -764,7 +790,7 @@ export const useAfterSurgery = (patient_national_id) => {
         titleStyle: {
           marginBottom: '12px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
         },
@@ -785,7 +811,11 @@ export const useAfterSurgery = (patient_national_id) => {
         titleStyle: {
           color: 'rgb(81, 84, 252)',
         },
-        wrapperClass: 'input-block col-6 ',
+        wrapperClass: 'input-block col-12 ',
+        inputStyle: {
+          width: '50%',
+        },
+
         options: ['NLP', 'LP', 'HM', 'CF50cm', 'CF1m', 'CF2m', 'Other'],
         inputClass: 'mt-1',
         optionItemClass: '',
@@ -800,9 +830,12 @@ export const useAfterSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '8px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
+        },
+        inputStyle: {
+          width: '50%',
         },
         options: ['airpuff', 'goldman', 'Schiotz', 'tonopen'],
         inputClass: '',
@@ -898,9 +931,12 @@ export const useAfterSurgery = (patient_national_id) => {
           color: 'rgb(81, 84, 252)',
           marginBottom: '8px',
         },
-        wrapperClass: 'input-block col-6',
+        wrapperClass: 'input-block col-12',
         wrapperStyle: {
           marginTop: '20px',
+        },
+        inputStyle: {
+          width: '50%',
         },
         options: [
           'Hyphema',

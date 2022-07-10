@@ -111,7 +111,7 @@ const PatientPage = () => {
                         setDeleteFormUrl(url);
                       }}
                     />
-                    {formIndex > 3 && (
+                    {formIndex > -1 && (
                       <Link to={`/app/form/edit${url}`}>
                         <FaEdit className={Style.detailButtons} />
                       </Link>
@@ -120,7 +120,7 @@ const PatientPage = () => {
                 </ul>
               );
             })}
-            {formIndex > 3 && (
+            {formIndex >= 0 && (
               <Link
                 className={Style.addFormButton}
                 to={`/app/form/set/${key}/${patientInfo.national_id}`}

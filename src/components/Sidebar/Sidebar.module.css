@@ -34,3 +34,13 @@
   margin-top: 5px;
 }
 
+.logo{
+  font-size: 1.7rem;
+  padding: 1rem 1.5rem;
+  color: white;
+  margin-bottom: 3rem ;
+}
+
+.logo > span{
+  margin : 0 10px;
+}

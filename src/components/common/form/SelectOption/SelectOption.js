@@ -11,6 +11,7 @@ const SelectOption = ({
   type,
   data,
   inputKey,
+  inputStyle,
 }) => {
   return (
     <Fragment>
@@ -38,10 +39,10 @@ const SelectOption = ({
                   key={inputKey}
                   {...field}
                   value={meta.value}
+                  style={inputStyle || (data && data.inputStyle)}
                   className={inputClass || (data && data.inputClass)}
                   onChange={(e) => {
                     if (e.target.value == 'انتخاب کنید') {
-                      
                       setFieldValue(data && data.name, '');
                     } else {
                       setFieldValue(data && data.name, e.target.value);
@@ -71,7 +72,6 @@ const SelectOption = ({
 
                 <ErrorMessage name={name || (data && data.name)}>
                   {(msg) => {
-                  
                     return (
                       <p
                         className={errorClass || (data && data.errorClass)}
