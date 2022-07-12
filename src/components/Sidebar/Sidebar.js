@@ -10,18 +10,24 @@ import {
   FaHome,
 } from 'react-icons/fa';
 
-const Sidebar = () => {
+const Sidebar = ({ expandSidebar }) => {
   let activeStyle = {
     color: '#dde2ff',
-    borderRight: '8px solid white',
+    borderRight: '4px solid white',
     backgroundColor: '#3e4049',
   };
 
   return (
-    <div className={`col-md-3 col-lg-2 d-none d-md-block ${Style.right}`}>
+    <div
+      className={`d-none d-md-block ${
+        expandSidebar ? 'col-md-3 col-lg-2' : Style.shrink
+      } ${Style.right}`}
+    >
       <div className={Style.logo}>
         <BsVectorPen />
-        <span>سامانه پزشک یار</span>
+        <span className={!expandSidebar ? 'd-none' : undefined}>
+          سامانه پزشک یار
+        </span>
       </div>
 
       <ul className="nav flex-column">
@@ -33,7 +39,7 @@ const Sidebar = () => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <FaHome className={Style.icons} />
-            خانه
+            <span className={!expandSidebar ? 'd-none' : undefined}> خانه</span>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -43,7 +49,9 @@ const Sidebar = () => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <FaSearch className={Style.icons} />
-            جستجوی بیمار
+            <span className={!expandSidebar ? 'd-none' : undefined}>
+              جستجوی بیمار
+            </span>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -53,7 +61,9 @@ const Sidebar = () => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <FaFileMedical className={Style.icons} />
-            تشکیل پرونده
+            <span className={!expandSidebar ? 'd-none' : undefined}>
+              تشکیل پرونده
+            </span>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -63,7 +73,10 @@ const Sidebar = () => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <FaMarker className={Style.icons} />
-            افزودن ویزیت
+            <span className={!expandSidebar ? 'd-none' : undefined}>
+              {' '}
+              افزودن ویزیت
+            </span>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -73,7 +86,7 @@ const Sidebar = () => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <FaSignOutAlt className={Style.icons} />
-            خروج
+            <span className={!expandSidebar ? 'd-none' : undefined}>خروج</span>
           </NavLink>
         </li>
       </ul>

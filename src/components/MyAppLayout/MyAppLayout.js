@@ -5,15 +5,22 @@ import Style from './MyAppLayout.module.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '../Header/Header';
+import { useState } from 'react';
 
 const MyAppLayout = () => {
+  const [expandSidebar, setExpandSidebar] = useState(true);
+
   return (
     <>
       <Navbar />
       <div className={`${Style.row} row g-0`}>
-        <Sidebar />
-        <main className={`${Style.main} col-md-9 col-lg-10 col-sm-12 g-0`}>
-          <Header />
+        <Sidebar expandSidebar={expandSidebar} />
+        <main
+          className={`${Style.main} ${
+            expandSidebar ? 'col-md-9 col-lg-10' : Style.fullWidth
+          } g-0`}
+        >
+          <Header setExpandSidebar={setExpandSidebar} />
           <section className={Style.mainContent}>
             <Outlet />
           </section>

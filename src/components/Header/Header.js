@@ -1,6 +1,11 @@
 import Style from './Header.module.css';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { BsChevronRight, BsChevronLeft, BsPerson } from 'react-icons/bs';
+import {
+  BsChevronRight,
+  BsChevronLeft,
+  BsPerson,
+  BsJustify,
+} from 'react-icons/bs';
 import { useState, useEffect } from 'react';
 import useAxios from '../../hooks/useAxios';
 
@@ -9,6 +14,7 @@ const utlToTitle = {
   patients: 'صفحه‌ی بیمار',
   createFile: 'تشکیل پرونده',
   addVisit: 'افزودن ویزیت',
+  addReference: 'افزودن ارجاع',
   form: 'فرم ها',
   set: 'ثبت فرم',
   edit: 'ویرایش فرم',
@@ -23,7 +29,7 @@ const utlToTitle = {
   surgery: 'اطلاعات معاینات جراحی ',
 };
 
-const Header = () => {
+const Header = ({ setExpandSidebar }) => {
   const axios = useAxios();
   const navigate = useNavigate();
   const location = useLocation();
@@ -63,6 +69,12 @@ const Header = () => {
   return (
     <div className={Style.header}>
       <div className={Style.navigations}>
+        <button
+          className={`${Style.hamburger} d-none d-md-flex`}
+          onClick={() => setExpandSidebar((prev) => !prev)}
+        >
+          <BsJustify />
+        </button>
         <button onClick={() => navigate(-1)}>
           <BsChevronRight />
         </button>

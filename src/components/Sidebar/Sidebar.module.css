@@ -1,6 +1,6 @@
 .right {
   height: 100%;
-  overflow-y: auto;
+  overflow: hidden;
   background-color: #363740;
   padding: 0;
 }
@@ -25,7 +25,7 @@
 
 .navLink:hover {
   color: #dde2ff;
-  border-right: 8px solid white;
+  border-right: 4px solid white;
   background-color: #3e4049;
 }
 
@@ -35,12 +35,16 @@
 }
 
 .logo{
-  font-size: 1.7rem;
-  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  padding: 1rem;
   color: white;
   margin-bottom: 3rem ;
 }
 
 .logo > span{
   margin : 0 10px;
+}
+
+.shrink {
+  width: 60px !important;
 }

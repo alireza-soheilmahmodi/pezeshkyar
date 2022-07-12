@@ -10,6 +10,7 @@ import Loading from '../common/Loading/Loading';
 import { Link } from 'react-router-dom';
 import DeleteFormModal from '../forms/formSetter/DeleteFormModal/DeleteFormModal';
 import { FaEye, FaTrash, FaEdit } from 'react-icons/fa';
+import AddReference from '../AddReference/AddReference';
 
 const PatientPage = () => {
   const { id } = useParams();
@@ -74,6 +75,17 @@ const PatientPage = () => {
         </div>
       </FormWrapper>
 
+      <div className="d-block text-center">
+        <Link
+          className={Style.addFormButton}
+          to={`/app/addReference/${patientInfo.national_id}`}
+        >
+          <button className="btn btn-secondary btn-lg btn-block">
+            افزودن ارجاع
+          </button>
+        </Link>
+      </div>
+
       <div className={Style.form}>
         <h2>فرم های بیمار</h2>
         {Object.entries(patientFormsLabel).map(([key, label], formIndex) => (
@@ -103,7 +115,6 @@ const PatientPage = () => {
                     <Link to={`/app/form/get${url}`}>
                       <FaEye className={Style.detailButtons} />
                     </Link>
-
                     <FaTrash
                       className={Style.detailButtons}
                       onClick={() => {
@@ -111,28 +122,28 @@ const PatientPage = () => {
                         setDeleteFormUrl(url);
                       }}
                     />
-                    {formIndex > -1 && (
-                      <Link to={`/app/form/edit${url}`}>
-                        <FaEdit className={Style.detailButtons} />
-                      </Link>
-                    )}
+
+                    <Link to={`/app/form/edit${url}`}>
+                      <FaEdit className={Style.detailButtons} />
+                    </Link>
                   </li>
                 </ul>
               );
             })}
-            {formIndex >= 0 && (
-              <Link
-                className={Style.addFormButton}
-                to={`/app/form/set/${key}/${patientInfo.national_id}`}
-              >
-                <button className="btn btn-success btn-lg btn-block">
-                  افزودن فرم
-                </button>
-              </Link>
-            )}
+
+            <Link
+              className={Style.addFormButton}
+              to={`/app/form/set/${key}/${patientInfo.national_id}`}
+            >
+              <button className="btn btn-success btn-lg btn-block">
+                افزودن فرم
+              </button>
+            </Link>
           </FormWrapper>
         ))}
       </div>
+
+      <AddReference national_id={patientInfo.national_id} />
 
       {modalIsOpen && (
         <DeleteFormModal setIsOpen={setModalIsOpen} formUrl={deleteFormUrl} />

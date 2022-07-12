@@ -9,6 +9,7 @@ import { FormSetter } from '../forms/formSetter/FormSetter';
 import FormEdit from '../forms/formEdit/FormEdit';
 import Missing from '../missing/Missing';
 import Home from '../Home/Home';
+import AddReference from '../AddReference/AddReference';
 import { Logout } from '../Logout/Logout';
 
 const MyApp = () => {
@@ -30,6 +31,8 @@ const MyApp = () => {
         <Route path="createFile" element={<CreateFile />} />
 
         <Route path="addVisit" element={<AddVisit />} />
+
+        <Route path="addReference/:national_id" element={<AddReference />} />
 
         <Route path="logout" element={<Logout />} />
 

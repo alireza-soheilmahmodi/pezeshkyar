@@ -16,9 +16,19 @@
 .mainContent{
   /* contract header height */
   height: calc(100% - 4rem);
-  
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+
+.fullWidth{
+  width: calc(100% - 60px) !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .fullWidth {
+   width: 100% !important;
+  }
 }
