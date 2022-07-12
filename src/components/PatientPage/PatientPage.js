@@ -10,7 +10,6 @@ import Loading from '../common/Loading/Loading';
 import { Link } from 'react-router-dom';
 import DeleteFormModal from '../forms/formSetter/DeleteFormModal/DeleteFormModal';
 import { FaEye, FaTrash, FaEdit } from 'react-icons/fa';
-import AddReference from '../AddReference/AddReference';
 
 const PatientPage = () => {
   const { id } = useParams();
