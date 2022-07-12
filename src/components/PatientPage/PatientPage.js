@@ -50,103 +50,108 @@ const PatientPage = () => {
   }
 
   return (
-    <div className={Style.container}>
-      <FormWrapper label="اطلاعات بیمار" borderColor="#4351ff">
-        <div
-          className={Style.InfoWrapper}
-          style={{ maxHeight: patientInfoExpand ? '1200px' : '370px' }}
-        >
-          {Object.entries(patientDataLabels).map(([key, label]) => (
-            <FormField
-              key={key}
-              label={label}
-              value={patientInfo[key]?.name || patientInfo[key]}
-            />
+    <div className={`${Style.container} `}>
+      <div
+        className="col-12 col-md-10 m-auto"
+        style={{
+          boxShadow: '0 0 10px 1px #ccc',
+        }}
+      >
+        <FormWrapper label="اطلاعات بیمار" borderColor="#4351ff">
+          <div
+            className={Style.InfoWrapper}
+            style={{ maxHeight: patientInfoExpand ? '1200px' : '370px' }}
+          >
+            {Object.entries(patientDataLabels).map(([key, label]) => (
+              <FormField
+                key={key}
+                label={label}
+                value={patientInfo[key]?.name || patientInfo[key]}
+              />
+            ))}
+          </div>
+
+          {/* dropdown button */}
+          <div className={`${patientInfoExpand ? 'dropup' : 'dropdown'}`}>
+            <button
+              className="btn btn-outline-dark dropdown-toggle mx-auto d-block"
+              onClick={() => setPatientInfoExpand((prev) => !prev)}
+            ></button>
+          </div>
+        </FormWrapper>
+
+        <div className="d-block text-center">
+          <Link
+            className={Style.addFormButton}
+            to={`/app/addReference/${patientInfo.national_id}`}
+          >
+            <button className="btn btn-warning mt-5 btn-lg btn-block">
+              افزودن ارجاع
+            </button>
+          </Link>
+        </div>
+
+        <div className={Style.form}>
+          <h2>فرم های بیمار</h2>
+          {Object.entries(patientFormsLabel).map(([key, label], formIndex) => (
+            <FormWrapper label={label} key={key} borderColor="#20b534">
+              <ul className={`${Style.formRow} ${Style.header}`}>
+                <li>تاریخ و ساعت</li>
+                <li>چشم</li>
+                <li>مشخصات دکتر</li>
+                <li>جزئیات بیشتر</li>
+              </ul>
+              {patientForms[key].map((item, index) => {
+                const urlArray = item?.url.split('/').slice(-3);
+                let url = '';
+                urlArray.forEach((element) => {
+                  url = url + `/${element}`;
+                });
+                return (
+                  <ul className={Style.formRow} key={index}>
+                    <li>{item?.register_date}</li>
+                    <li>{item?.eye_side || '----'}</li>
+                    <li>
+                      {item?.doctor?.user?.first_name +
+                        ' ' +
+                        item?.doctor?.user?.last_name}
+                    </li>
+                    <li className={Style.details}>
+                      <Link to={`/app/form/get${url}`}>
+                        <FaEye className={Style.detailButtons} />
+                      </Link>
+                      <FaTrash
+                        className={Style.detailButtons}
+                        onClick={() => {
+                          setModalIsOpen(true);
+                          setDeleteFormUrl(url);
+                        }}
+                      />
+
+                      <Link to={`/app/form/edit${url}`}>
+                        <FaEdit className={Style.detailButtons} />
+                      </Link>
+                    </li>
+                  </ul>
+                );
+              })}
+
+              <Link
+                className={Style.addFormButton}
+                to={`/app/form/set/${key}/${patientInfo.national_id}`}
+              >
+                <button className="btn btn-success btn-lg btn-block">
+                  افزودن فرم
+                </button>
+              </Link>
+            </FormWrapper>
           ))}
         </div>
 
-        {/* dropdown button */}
-        <div className={`${patientInfoExpand ? 'dropup' : 'dropdown'}`}>
-          <button
-            className="btn btn-outline-dark dropdown-toggle mx-auto d-block"
-            onClick={() => setPatientInfoExpand((prev) => !prev)}
-          ></button>
-        </div>
-      </FormWrapper>
-
-      <div className="d-block text-center">
-        <Link
-          className={Style.addFormButton}
-          to={`/app/addReference/${patientInfo.national_id}`}
-        >
-          <button className="btn btn-secondary btn-lg btn-block">
-            افزودن ارجاع
-          </button>
-        </Link>
+        {modalIsOpen && (
+          <DeleteFormModal setIsOpen={setModalIsOpen} formUrl={deleteFormUrl} />
+        )}
       </div>
-
-      <div className={Style.form}>
-        <h2>فرم های بیمار</h2>
-        {Object.entries(patientFormsLabel).map(([key, label], formIndex) => (
-          <FormWrapper label={label} key={key} borderColor="#20b534">
-            <ul className={`${Style.formRow} ${Style.header}`}>
-              <li>تاریخ و ساعت</li>
-              <li>چشم</li>
-              <li>مشخصات دکتر</li>
-              <li>جزئیات بیشتر</li>
-            </ul>
-            {patientForms[key].map((item, index) => {
-              const urlArray = item?.url.split('/').slice(-3);
-              let url = '';
-              urlArray.forEach((element) => {
-                url = url + `/${element}`;
-              });
-              return (
-                <ul className={Style.formRow} key={index}>
-                  <li>{item?.register_date}</li>
-                  <li>{item?.eye_side || '----'}</li>
-                  <li>
-                    {item?.doctor?.user?.first_name +
-                      ' ' +
-                      item?.doctor?.user?.last_name}
-                  </li>
-                  <li className={Style.details}>
-                    <Link to={`/app/form/get${url}`}>
-                      <FaEye className={Style.detailButtons} />
-                    </Link>
-                    <FaTrash
-                      className={Style.detailButtons}
-                      onClick={() => {
-                        setModalIsOpen(true);
-                        setDeleteFormUrl(url);
-                      }}
-                    />
-
-                    <Link to={`/app/form/edit${url}`}>
-                      <FaEdit className={Style.detailButtons} />
-                    </Link>
-                  </li>
-                </ul>
-              );
-            })}
-
-            <Link
-              className={Style.addFormButton}
-              to={`/app/form/set/${key}/${patientInfo.national_id}`}
-            >
-              <button className="btn btn-success btn-lg btn-block">
-                افزودن فرم
-              </button>
-            </Link>
-          </FormWrapper>
-        ))}
-      </div>
-
-      <AddReference national_id={patientInfo.national_id} />
-
-      {modalIsOpen && (
-        <DeleteFormModal setIsOpen={setModalIsOpen} formUrl={deleteFormUrl} />
-      )}
     </div>
   );
 };

@@ -8,6 +8,7 @@ import {
   FaMarker,
   FaSignOutAlt,
   FaHome,
+  FaFileAlt,
 } from 'react-icons/fa';
 
 const Sidebar = ({ expandSidebar }) => {
@@ -76,6 +77,19 @@ const Sidebar = ({ expandSidebar }) => {
             <span className={!expandSidebar ? 'd-none' : undefined}>
               {' '}
               افزودن ویزیت
+            </span>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            className={Style.navLink}
+            to="References"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            <FaFileAlt className={Style.icons} />
+            <span className={!expandSidebar ? 'd-none' : undefined}>
+              {' '}
+              ارجاعات
             </span>
           </NavLink>
         </li>

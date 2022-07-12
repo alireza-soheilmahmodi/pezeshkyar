@@ -85,7 +85,7 @@ const CreateFile = () => {
   return (
     <div className={Style.container}>
       <div
-        className="col-10 m-auto form-max-width p-3 "
+        className="col-12 col-md-9 m-auto form-max-width p-3 "
         style={{
           boxShadow: '0 0 10px 1px #ccc',
           background: '#f2f2f2',

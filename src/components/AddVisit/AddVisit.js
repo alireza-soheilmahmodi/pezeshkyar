@@ -84,7 +84,7 @@ const AddVisit = () => {
     }
   };
   return (
-    <section className={Style.container}>
+    <section className={`${Style.container} col-md-8 col-12`}>
       <section className={Style.inputSection}>
         <label>بیمار:</label>
 

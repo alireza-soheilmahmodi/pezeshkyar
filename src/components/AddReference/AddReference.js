@@ -126,13 +126,14 @@ const AddReference = () => {
                   <InputMaker data={data} />
                   <br />
                   <br />
+
+                  <button
+                    type="submit"
+                    className={`${Style.jfButton} m-auto mb-2 w-50`}
+                  >
+                    ثبت
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
-                  ثبت
-                </button>
               </Form>
             </Formik>
           </div>
