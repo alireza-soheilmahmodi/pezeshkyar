@@ -63,7 +63,6 @@ const AfterSurgery = () => {
   const data = useAfterSurgery(national_id);
 
   const R_doSubmit = async (value) => {
-    console.log(value);
     const RightModel = {
       visit: value.visit,
       refraction_cylinder: value.R_cylinder,

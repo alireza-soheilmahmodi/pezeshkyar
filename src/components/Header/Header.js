@@ -15,6 +15,8 @@ const utlToTitle = {
   createFile: 'تشکیل پرونده',
   addVisit: 'افزودن ویزیت',
   addReference: 'افزودن ارجاع',
+  References: 'ارجاعات',
+  answerRef: 'پاسخ ارجاع',
   form: 'فرم ها',
   set: 'ثبت فرم',
   edit: 'ویرایش فرم',

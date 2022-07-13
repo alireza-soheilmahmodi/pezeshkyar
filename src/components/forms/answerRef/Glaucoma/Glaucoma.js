@@ -1,15 +1,18 @@
 import { Form, Formik } from 'formik';
 import { InputMaker } from '../../../common/form/InputMaker';
 import { useGlaucoma } from '../../../../data/useGlaucoma';
+import GlaucomaValidator from '../../../../utils/validation/Glaucoma.validation';
 import useAxios from '../../../../hooks/useAxios';
 import { useParams } from 'react-router-dom';
 import Style from './Glaucoma.module.css';
 import Loading from '../../../common/Loading/Loading';
 import { toast } from 'react-toastify';
-import GlaucomaValidator from '../../../../utils/validation/Glaucoma.validation';
+import { useEffect, useState } from 'react';
+
+//deleting visit field from from validator
+delete GlaucomaValidator.fields.visit;
 
 const initialValues = {
-  visit: '',
   age: 0,
   operationAge: 0,
   glaucomaHistoryOperation: 'ندارد',
@@ -40,12 +43,44 @@ const initialValues = {
 
 const Glaucoma = () => {
   const axios = useAxios();
-  const { national_id } = useParams();
-  const data = useGlaucoma(national_id);
+  const { id } = useParams();
+  const data = useGlaucoma();
+  const [refDetail, setRefDetail] = useState();
+  // remove visit property
+  const ansData = data.slice(1);
+
+  useEffect(() => {
+    const getRefDetail = async () => {
+      try {
+        const res = await axios.get(`refers/${id}`);
+        setRefDetail(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    getRefDetail();
+  }, []);
 
   const doSubmit = async (value) => {
+    const answerModel = {
+      id: parseInt(id),
+      status: 'پاسخ داده شده',
+      answer: 'answer',
+    };
+
+    let visit;
+
+    try {
+      const res = await axios.patch('refers/', answerModel);
+      visit = res.data.visit;
+    } catch (err) {
+      console.log(err);
+      return;
+    }
+
     const model = {
-      visit: value.visit,
+      visit: visit,
       history_glaucoma_surgery: value.glaucomaHistoryOperation,
       shunt: value.shant,
       shunt_location: value.shantLocation,
@@ -76,23 +111,42 @@ const Glaucoma = () => {
 
     try {
       await axios.post('forms/glaucoma/', model);
-      toast.success('اطلاعات موفقیت ثبت شد');
+      toast.success('اطلاعات با موفقیت ثبت شد');
     } catch (err) {
       toast.error('اطلاعات فرم کامل نیست');
       console.log(err);
     }
   };
 
-  if (!data) return <Loading />;
+  if (!data || !refDetail) return <Loading />;
   return (
     <div className={Style.container}>
       <div
-        className="col-8 m-auto form-max-width row"
+        className="col-12 col-md-10 m-auto form-max-width row"
         style={{
           boxShadow: '0 0 10px 1px #ccc',
           background: '#f2f2f2',
         }}
       >
+        <div className="mt-5 row ">
+          <div className="col-6 fs-4">
+            <span>{`فرم : ${refDetail?.form}`}</span>
+          </div>
+          <div className="col-6 fs-4">
+            <span>
+              {`ارجاع شده از طرف دکتر: ${
+                refDetail?.from_doctor?.user?.first_name +
+                ' ' +
+                refDetail?.from_doctor?.user?.last_name
+              }`}
+            </span>
+          </div>
+          <div className="col-10 mt-3">
+            <p>توضیحات : </p>
+            <p>{refDetail?.details}</p>
+          </div>
+        </div>
+
         <Formik
           initialValues={initialValues}
           onSubmit={doSubmit}
@@ -112,7 +166,7 @@ const Glaucoma = () => {
                 background: '#f2f2f2',
               }}
             >
-              <InputMaker data={data} />
+              <InputMaker data={ansData} />
 
               <br />
             </div>

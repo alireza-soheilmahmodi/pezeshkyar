@@ -5,6 +5,21 @@ import Loading from '../common/Loading/Loading';
 import Pagination from '../common/Pagination/Pagination';
 import useAxios from '../../hooks/useAxios';
 
+const formToUrl = (form) => {
+  switch (form) {
+    case 'Retina Consult':
+      return 'retina_consult';
+    case 'استرابیسم':
+      return 'strabism';
+    case 'Genetics':
+      return 'genetics';
+    case 'Glaucoma':
+      return 'glaucoma';
+    default:
+      return '';
+  }
+};
+
 const AllReferences = () => {
   const [refers, setRefers] = useState();
   const [visitDetails, setVisitDetails] = useState();
@@ -81,7 +96,11 @@ const AllReferences = () => {
               refers.results.map((item, index) => (
                 <tr key={index} className={Style.tr}>
                   <td
-                    onClick={() => navigate('/references/' + item.id)}
+                    onClick={() =>
+                      navigate(
+                        `/app/answerRef/${formToUrl(item.form)}/${item.id}`
+                      )
+                    }
                     className={Style.td}
                   >
                     {visitDetails[index].patient_summary.first_name +
@@ -89,13 +108,21 @@ const AllReferences = () => {
                       visitDetails[index].patient_summary.last_name}
                   </td>
                   <td
-                    onClick={() => navigate('/references/' + item.id)}
+                    onClick={() =>
+                      navigate(
+                        `/app/answerRef/${formToUrl(item.form)}/${item.id}`
+                      )
+                    }
                     className={Style.td}
                   >
                     {item.form}
                   </td>
                   <td
-                    onClick={() => navigate('/references/' + item.id)}
+                    onClick={() =>
+                      navigate(
+                        `/app/answerRef/${formToUrl(item.form)}/${item.id}`
+                      )
+                    }
                     className={Style.td}
                   >
                     {item.creation_date}

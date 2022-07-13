@@ -7,6 +7,7 @@ import PatientPage from '../PatientPage/PatientPage';
 import FormGetter from '../forms/FormGetter/FormGetter';
 import { FormSetter } from '../forms/formSetter/FormSetter';
 import FormEdit from '../forms/formEdit/FormEdit';
+import AnswerRef from '../forms/answerRef/AnswerRef';
 import Missing from '../missing/Missing';
 import Home from '../Home/Home';
 import AddReference from '../AddReference/AddReference';
@@ -28,6 +29,8 @@ const MyApp = () => {
         <Route path="form/set/*" element={<FormSetter />} />
 
         <Route path="form/edit/*" element={<FormEdit />} />
+
+        <Route path="/answerRef/*" element={<AnswerRef />} />
 
         <Route path="createFile" element={<CreateFile />} />
 

@@ -5,7 +5,7 @@ function Pagination({ next, prev, pageChangeHandler }) {
     <div className={styles.pagination}>
       <div
         onClick={() => {
-          pageChangeHandler(prev);
+          prev && pageChangeHandler(prev);
         }}
         className={!prev ? styles.deactiveBtn : styles.btn}
       >
@@ -13,7 +13,7 @@ function Pagination({ next, prev, pageChangeHandler }) {
       </div>
       <div
         onClick={() => {
-          pageChangeHandler(next);
+          next && pageChangeHandler(next);
         }}
         className={!next ? styles.deactiveBtn : styles.btn}
       >
