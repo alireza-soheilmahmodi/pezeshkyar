@@ -147,7 +147,7 @@ const Glaucoma = () => {
           background: '#f2f2f2',
         }}
       >
-        <div className="col-md-8 m-auto">
+        <div className="col-12 col-md-9 m-auto">
           <Formik
             initialValues={formValues}
             enableReinitialize={true}
@@ -164,10 +164,14 @@ const Glaucoma = () => {
                 <InputMaker data={editData} />
 
                 <br />
+
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mt-4 mb-2`}
+                >
+                  ثبت
+                </button>
               </div>
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
             </Form>
           </Formik>
         </div>

@@ -125,13 +125,13 @@ const ExaminationsSurgery = () => {
   return (
     <div className={Style.container}>
       <div
-        className="col-12 m-auto form-max-width row"
+        className="col-12 col-md-9 m-auto form-max-width row"
         style={{
           boxShadow: '0 0 10px 1px #ccc',
           background: '#f2f2f2',
         }}
       >
-        <div className="col-md-8 m-auto">
+        <div className="col-12 m-auto">
           <Formik
             initialValues={formValues}
             enableReinitialize={true}
@@ -166,10 +166,14 @@ const ExaminationsSurgery = () => {
                 />
 
                 <br />
+
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mt-4 mb-2`}
+                >
+                  ثبت
+                </button>
               </div>
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
             </Form>
           </Formik>
         </div>

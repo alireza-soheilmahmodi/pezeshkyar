@@ -161,13 +161,14 @@ const AfterSurgery = () => {
                   <InputMaker data={data.RightModel} />
                   <br />
                   <br />
+
+                  <button
+                    type="submit"
+                    className={`${Style.jfButton} m-auto mt-4 mb-2`}
+                  >
+                    ثبت
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
-                  ثبت
-                </button>
               </Form>
             </Formik>
           </div>
@@ -195,13 +196,14 @@ const AfterSurgery = () => {
                   <InputMaker data={data.LeftModel} />
                   <br />
                   <br />
+
+                  <button
+                    type="submit"
+                    className={`${Style.jfButton} m-auto  mt-4 mb-2`}
+                  >
+                    ثبت
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
-                  ثبت
-                </button>
               </Form>
             </Formik>
           </div>

@@ -7,6 +7,8 @@
 .jfButton {
   padding: 10px 45px;
   cursor: pointer;
+  min-width: 200px !important;
+  max-width: 20% !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

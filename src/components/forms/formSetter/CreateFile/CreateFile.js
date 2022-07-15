@@ -122,7 +122,7 @@ const CreateFile = () => {
             <button
               onClick={() => setShowError(true)}
               type="submit"
-              className={`${Style.jfButton} m-auto mb-2`}
+              className={`${Style.jfButton} m-auto mt-4 mb-2`}
             >
               ثبت
             </button>

@@ -176,11 +176,15 @@ const Strabism = () => {
                 <InputMaker data={data.rightModel} />
 
                 <br />
+
+                <br />
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mb-2`}
+                >
+                  ثبت
+                </button>
               </div>
-              <br />
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
             </Form>
           </Formik>
         </div>
@@ -200,11 +204,15 @@ const Strabism = () => {
                 <InputMaker data={data.leftModel} />
 
                 <br />
+
+                <br />
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mb-2`}
+                >
+                  ثبت
+                </button>
               </div>
-              <br />
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
             </Form>
           </Formik>
         </div>

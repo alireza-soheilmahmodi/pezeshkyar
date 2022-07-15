@@ -40,11 +40,22 @@ const FormGetter = () => {
 
   return (
     <div className={Style.container}>
-      <FormWrapper label={`فرم ${formType}`}>
-        {fields.map((item) => (
-          <FormField key={item.key} label={item.label} value={data[item.key]} />
-        ))}
-      </FormWrapper>
+      <div
+        className="col-12 col-md-9 m-auto row"
+        style={{
+          boxShadow: '0 0 10px 1px #ccc',
+        }}
+      >
+        <FormWrapper label={`فرم ${formType}`}>
+          {fields.map((item) => (
+            <FormField
+              key={item.key}
+              label={item.label}
+              value={data[item.key]}
+            />
+          ))}
+        </FormWrapper>
+      </div>
     </div>
   );
 };

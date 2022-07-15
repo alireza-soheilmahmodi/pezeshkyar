@@ -152,12 +152,15 @@ const BeforeSurgery = () => {
                 <h2 className="mt-5">چشم راست</h2>
                 <br />
                 <InputMaker data={data.RightEye} />
-              </div>
 
-              <br />
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
+                <br />
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mb-2`}
+                >
+                  ثبت
+                </button>
+              </div>
             </Form>
           </Formik>
         </div>
@@ -186,11 +189,15 @@ const BeforeSurgery = () => {
                 <h2 className="mt-5">چشم چپ</h2>
                 <br />
                 <InputMaker data={data.LeftEye} />
+
+                <br />
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mb-2`}
+                >
+                  ثبت
+                </button>
               </div>
-              <br />
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
             </Form>
           </Formik>
         </div>

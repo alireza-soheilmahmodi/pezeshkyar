@@ -1,12 +1,14 @@
 .container {
-  margin-top: 4rem;
   height: 100%;
+  width: 100%;
   overflow: auto;
 }
 
 .jfButton {
   padding: 10px 45px;
   cursor: pointer;
+  min-width: 200px !important;
+  max-width: 20% !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

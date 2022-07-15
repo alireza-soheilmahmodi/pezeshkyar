@@ -137,7 +137,7 @@ const RetinaConsult = () => {
   return (
     <div className={Style.container}>
       <div
-        className="col-8 m-auto form-max-width row"
+        className="col-12 col-md-9 m-auto row"
         style={{
           boxShadow: '0 0 10px 1px #ccc',
           background: '#f2f2f2',
@@ -160,10 +160,14 @@ const RetinaConsult = () => {
                 <InputMaker data={editData} />
                 <br />
                 <br />
+
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mb-2`}
+                >
+                  ثبت
+                </button>
               </div>
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
             </Form>
           </Formik>
         </div>

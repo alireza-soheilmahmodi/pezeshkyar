@@ -96,47 +96,39 @@ const AddReference = () => {
   return (
     <>
       <div className={Style.container}>
-        <div
-          className="col-12 m-auto form-max-width row"
-          style={{
-            boxShadow: '0 0 10px 1px #ccc',
-            background: '#f2f2f2',
-          }}
-        >
-          <div className="col-md-12">
-            <Formik
-              initialValues={initialDefaultValues}
-              onSubmit={doSubmit}
-              validationSchema={AddReferenceValidator}
-              validateOnBlur={false}
-              validateOnChange={false}
-              validate={async (values) => {
-                const valid = await AddReferenceValidator.isValid(values);
-                if (!valid) toast.error('اطلاعات فرم ارجاع کامل نیست');
-              }}
-            >
-              <Form>
-                <div
-                  className="row p-2"
-                  style={{
-                    boxShadow: '0 0 10px 1px #ccc',
-                    background: '#f2f2f2',
-                  }}
-                >
-                  <InputMaker data={data} />
-                  <br />
-                  <br />
+        <div className="col-12 col-md-10 m-auto mt-md-5 row">
+          <Formik
+            initialValues={initialDefaultValues}
+            onSubmit={doSubmit}
+            validationSchema={AddReferenceValidator}
+            validateOnBlur={false}
+            validateOnChange={false}
+            validate={async (values) => {
+              const valid = await AddReferenceValidator.isValid(values);
+              if (!valid) toast.error('اطلاعات فرم ارجاع کامل نیست');
+            }}
+          >
+            <Form>
+              <div
+                className="row p-2 "
+                style={{
+                  boxShadow: '0 0 10px 1px #ccc',
+                  background: '#f2f2f2',
+                }}
+              >
+                <InputMaker data={data} />
+                <br />
+                <br />
 
-                  <button
-                    type="submit"
-                    className={`${Style.jfButton} m-auto mb-2 w-50`}
-                  >
-                    ثبت
-                  </button>
-                </div>
-              </Form>
-            </Formik>
-          </div>
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mb-2`}
+                >
+                  ثبت
+                </button>
+              </div>
+            </Form>
+          </Formik>
         </div>
       </div>
     </>

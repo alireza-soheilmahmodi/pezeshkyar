@@ -47,15 +47,16 @@
 width: 100%;
 border-radius: 5px;
 padding: 1rem 0.5rem;
-background-color: rgb(203, 201, 201);
+background-color: white;
 }
 
 
 .jfButton {
   margin-top: 2rem;
   padding: 0.5rem 1rem;
-  width: 50%;
   cursor: pointer;
+  min-width: 200px !important;
+  max-width: 20% !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

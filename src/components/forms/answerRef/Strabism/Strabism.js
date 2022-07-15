@@ -203,29 +203,27 @@ const Strabism = () => {
   return (
     <div className={Style.container}>
       <div
-        className="col-12 col-md-11 m-auto form-max-width row"
+        className="col-12 m-auto form-max-width row"
         style={{
           boxShadow: '0 0 10px 1px #ccc',
           background: '#f2f2f2',
         }}
       >
-        <div className="mt-5 row ">
-          <div className="col-6 fs-4">
-            <span>{`فرم : ${refDetail?.form}`}</span>
-          </div>
-          <div className="col-6 fs-4">
-            <span>
-              {`ارجاع شده از طرف دکتر: ${
-                refDetail?.from_doctor?.user?.first_name +
-                ' ' +
-                refDetail?.from_doctor?.user?.last_name
-              }`}
-            </span>
-          </div>
-          <div className="col-10 mt-3">
-            <p>توضیحات : </p>
-            <p>{refDetail?.details}</p>
-          </div>
+        <div className="col-6 fs-4">
+          <span>{`فرم : ${refDetail?.form}`}</span>
+        </div>
+        <div className="col-6 fs-4">
+          <span>
+            {`ارجاع شده از طرف دکتر: ${
+              refDetail?.from_doctor?.user?.first_name +
+              ' ' +
+              refDetail?.from_doctor?.user?.last_name
+            }`}
+          </span>
+        </div>
+        <div className="col-10 mt-3">
+          <p>توضیحات : </p>
+          <p>{refDetail?.details}</p>
         </div>
 
         <div className="col-md-6">
@@ -244,11 +242,15 @@ const Strabism = () => {
                 <InputMaker data={ansDataRight} />
 
                 <br />
+
+                <br />
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mb-2`}
+                >
+                  ثبت
+                </button>
               </div>
-              <br />
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
             </Form>
           </Formik>
         </div>
@@ -268,11 +270,15 @@ const Strabism = () => {
                 <InputMaker data={ansDataLeft} />
 
                 <br />
+
+                <br />
+                <button
+                  type="submit"
+                  className={`${Style.jfButton} m-auto mb-2`}
+                >
+                  ثبت
+                </button>
               </div>
-              <br />
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
-                ثبت
-              </button>
             </Form>
           </Formik>
         </div>

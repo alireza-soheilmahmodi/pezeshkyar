@@ -138,13 +138,14 @@ const Children = () => {
                   <br />
                   <InputMaker data={data.RightModel} />
                   <br />
+
+                  <button
+                    type="submit"
+                    className={`${Style.jfButton} m-auto mb-2`}
+                  >
+                    ثبت
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
-                  ثبت
-                </button>
               </Form>
             </Formik>
           </div>
@@ -173,13 +174,14 @@ const Children = () => {
                   <br />
                   <InputMaker data={data.LeftModel} />
                   <br />
+
+                  <button
+                    type="submit"
+                    className={`${Style.jfButton} m-auto mb-2`}
+                  >
+                    ثبت
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
-                  ثبت
-                </button>
               </Form>
             </Formik>
           </div>

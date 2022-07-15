@@ -124,24 +124,23 @@ const RetinaConsult = () => {
           background: '#f2f2f2',
         }}
       >
-        <div className="mt-5 row ">
-          <div className="col-6 fs-4">
-            <span>{`فرم : ${refDetail?.form}`}</span>
-          </div>
-          <div className="col-6 fs-4">
-            <span>
-              {`ارجاع شده از طرف دکتر: ${
-                refDetail?.from_doctor?.user?.first_name +
-                ' ' +
-                refDetail?.from_doctor?.user?.last_name
-              }`}
-            </span>
-          </div>
-          <div className="col-10 mt-3">
-            <p>توضیحات : </p>
-            <p>{refDetail?.details}</p>
-          </div>
+        <div className="col-6 fs-4">
+          <span>{`فرم : ${refDetail?.form}`}</span>
         </div>
+        <div className="col-6 fs-4">
+          <span>
+            {`ارجاع شده از طرف دکتر: ${
+              refDetail?.from_doctor?.user?.first_name +
+              ' ' +
+              refDetail?.from_doctor?.user?.last_name
+            }`}
+          </span>
+        </div>
+        <div className="col-10 mt-3">
+          <p>توضیحات : </p>
+          <p>{refDetail?.details}</p>
+        </div>
+        <hr />
 
         <Formik
           initialValues={initialValues}
@@ -155,13 +154,7 @@ const RetinaConsult = () => {
           }}
         >
           <Form>
-            <div
-              className="row px-2"
-              style={{
-                boxShadow: '0 0 10px 1px #ccc',
-                background: '#f2f2f2',
-              }}
-            >
+            <div className="row px-2">
               <InputMaker data={ansData} />
 
               <br />

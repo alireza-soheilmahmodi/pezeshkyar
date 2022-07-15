@@ -169,13 +169,14 @@ const ExaminationsSurgery = () => {
                     }}
                   />
                   <br />
+
+                  <button
+                    type="submit"
+                    className={`${Style.jfButton} m-auto mt-4 mb-2`}
+                  >
+                    ثبت
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
-                  ثبت
-                </button>
               </Form>
             </Formik>
           </div>
@@ -212,13 +213,14 @@ const ExaminationsSurgery = () => {
                     }}
                   />
                   <br />
+
+                  <button
+                    type="submit"
+                    className={`${Style.jfButton} m-auto mt-4 mb-2`}
+                  >
+                    ثبت
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
-                  ثبت
-                </button>
               </Form>
             </Formik>
           </div>
