@@ -72,7 +72,7 @@ const Strabism = () => {
 
   const R_doSubmit = async (value) => {
     const Model = {
-      visit: value.visit,
+      visit: value.visit || data.rightModel[0].defaultOption.value,
       fixation: value.OD_fixation,
       following: value.OD_following,
       glass: value.OD_glass,
@@ -112,7 +112,7 @@ const Strabism = () => {
 
   const L_doSubmit = async (value) => {
     const Model = {
-      visit: value.visit,
+      visit: value.visit || data.rightModel[0].defaultOption.value,
       fixation: value.OS_fixation,
       following: value.OS_following,
       glass: value.OS_glass,

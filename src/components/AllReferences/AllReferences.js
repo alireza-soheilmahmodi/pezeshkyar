@@ -22,7 +22,6 @@ const formToUrl = (form) => {
 
 const AllReferences = () => {
   const [refers, setRefers] = useState();
-  const [visitDetails, setVisitDetails] = useState();
   const [fileLink, setFileLink] = useState();
   const axios = useAxios();
 
@@ -31,14 +30,7 @@ const AllReferences = () => {
   useEffect(() => {
     const getRefs = async () => {
       const refs = await axios.get('refers/');
-      const visitDetail = [];
-      for (let i = 0; i < refs.data.results.length; i++) {
-        const urlList = refs.data.results[i].visit.split('/').splice(-2);
-        const visitResult = await axios.get(`visits/${urlList[0]}`);
-        visitDetail.push(visitResult.data);
-      }
       setRefers(refs.data);
-      setVisitDetails(visitDetail);
     };
 
     getRefs();
@@ -48,16 +40,7 @@ const AllReferences = () => {
     const getNewPage = async () => {
       const fileUrl = fileLink.split('/').splice(-1);
       const newPageRefers = await axios.get(`refers/${fileUrl}`);
-      const visitDetail = [];
-      for (let i = 0; i < newPageRefers.data.results.length; i++) {
-        const urlList = newPageRefers.data.results[i].visit
-          .split('/')
-          .splice(-2);
-        const visitResult = await axios.get(`visits/${urlList[0]}`);
-        visitDetail.push(visitResult.data);
-      }
       setRefers(newPageRefers.data);
-      setVisitDetails(visitDetail);
     };
 
     if (fileLink) {
@@ -67,11 +50,10 @@ const AllReferences = () => {
 
   const pageChangeHandler = (link) => {
     setFileLink(link);
-    setVisitDetails([]);
     setRefers();
   };
 
-  if (!(visitDetails && refers)) return <Loading />;
+  if (!refers) return <Loading />;
 
   return (
     <div className={Style.container}>
@@ -92,7 +74,6 @@ const AllReferences = () => {
           </thead>
           <tbody>
             {refers &&
-              visitDetails &&
               refers.results.map((item, index) => (
                 <tr key={index} className={Style.tr}>
                   <td
@@ -103,9 +84,9 @@ const AllReferences = () => {
                     }
                     className={Style.td}
                   >
-                    {visitDetails[index].patient_summary.first_name +
+                    {item.patient_summary.first_name +
                       ' ' +
-                      visitDetails[index].patient_summary.last_name}
+                      item.patient_summary.last_name}
                   </td>
                   <td
                     onClick={() =>

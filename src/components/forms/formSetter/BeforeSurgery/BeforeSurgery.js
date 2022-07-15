@@ -67,7 +67,7 @@ const BeforeSurgery = () => {
       cataracte_type: value.R_cataractType,
       anterior_segment: value.R_anteriorSegment,
       retin: value.R_retin,
-      visit: value.visit,
+      visit: value.visit || data.RightEye[0].defaultOption.value,
       eye_side: 'راست',
       id: 4,
       asmr: value.R_followLight, // follow light
@@ -96,7 +96,7 @@ const BeforeSurgery = () => {
       cataracte_type: value.L_cataractType,
       anterior_segment: value.L_anteriorSegment,
       retin: value.L_retin,
-      visit: value.visit,
+      visit: value.visit || data.RightEye[0].defaultOption.value,
       eye_side: 'چپ',
       id: 4,
       asmr: value.L_followLight,

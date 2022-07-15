@@ -2,9 +2,6 @@ import * as Yup from 'yup';
 
 const R_BeforSurgeryValidator = Yup.object().shape({
   //right eye
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
 
   R_visualAcuity: Yup.number('این فیلد باید پر شود')
     .min(0, 'این فیلد نمیتواند منفی باشد')
@@ -56,9 +53,6 @@ const R_BeforSurgeryValidator = Yup.object().shape({
 });
 const L_BeforSurgeryValidator = Yup.object().shape({
   // left eye
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
   L_visualAcuity: Yup.number('این فیلد باید پر شود')
     .min(0, 'این فیلد نمیتواند منفی باشد')
     .max(10, 'این فیلد نباید بیشتر از 10 باشد')

@@ -64,7 +64,7 @@ const AfterSurgery = () => {
 
   const R_doSubmit = async (value) => {
     const RightModel = {
-      visit: value.visit,
+      visit: value.visit || data.RightModel[0].defaultOption.value,
       refraction_cylinder: value.R_cylinder,
       refraction_sphere: value.R_sphere,
       refraction_axis: value.R_axis,
@@ -96,7 +96,7 @@ const AfterSurgery = () => {
 
   const L_doSubmit = async (value) => {
     const LeftModel = {
-      visit: value.visit,
+      visit: value.visit || data.RightModel[0].defaultOption.value,
       refraction_cylinder: value.L_cylinder,
       refraction_sphere: value.L_sphere,
       refraction_axis: value.L_axis,

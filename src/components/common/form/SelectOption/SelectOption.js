@@ -50,11 +50,17 @@ const SelectOption = ({
                   }}
                   disabled={data.readOnly}
                 >
-                  <option value={undefined}>
-                    {data && data.defaultOption
-                      ? data.defaultOption
-                      : 'انتخاب کنید'}
-                  </option>
+                  {data.defaultOption?.value ? (
+                    <option value={data.defaultOption.value}>
+                      {data.defaultOption.label}
+                    </option>
+                  ) : (
+                    <option value={undefined}>
+                      {data && data.defaultOption
+                        ? data.defaultOption
+                        : 'انتخاب کنید'}
+                    </option>
+                  )}
 
                   {data &&
                     data.options &&

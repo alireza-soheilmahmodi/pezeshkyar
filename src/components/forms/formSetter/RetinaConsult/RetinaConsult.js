@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 
 const initialValues = {
+  visit: '',
   congenitalCataract: 0,
   redReflex: 'خیر',
   fixation: 'خیر',
@@ -66,7 +67,7 @@ const RetinaConsult = () => {
       refraction_cylinder: value.cylinder,
       refraction_axis: value.axis,
       other_diagnosis: value.otherDiagnoses,
-      visit: value.visit,
+      visit: value.visit || data[0].defaultOption.value,
     };
 
     try {

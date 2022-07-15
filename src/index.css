@@ -28,8 +28,18 @@ textarea{
 }
 
 input[type='text']{
+  background-color: white !important;
   width: 100%;
   padding: 0.5rem 1rem;
   display: block;
+  border: 1px solid grey !important;
 }
 
+input[type='number']{
+  background-color: white !important;
+
+}
+
+.input-help{
+  color: black !important;
+}

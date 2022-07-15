@@ -1,9 +1,6 @@
 import * as Yup from 'yup';
 
 const R_ChildrenValidator = Yup.object().shape({
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
   R_quarantineStatus: Yup.string('این فیلد باید رشته باشد')
     .required('این فیلد لازم است')
     .nullable(),
@@ -39,9 +36,6 @@ const R_ChildrenValidator = Yup.object().shape({
   // dateFileRegistration: Yup.date().required("این فیلد لازم است").nullable(),
 });
 const L_ChildrenValidator = Yup.object().shape({
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
   L_quarantineStatus: Yup.string('این فیلد باید رشته باشد')
     .required('این فیلد لازم است')
     .nullable(),

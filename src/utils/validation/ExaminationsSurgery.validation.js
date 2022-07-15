@@ -1,9 +1,6 @@
 import * as Yup from 'yup';
 
 const R_ExaminationsSurgeryValidator = Yup.object().shape({
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
   R_dateSurgery: Yup.string().required('این فیلد لازم است').nullable(),
   R_timeSurgery: Yup.string('این فیلد باید رشته باشد')
     .required('این فیلد لازم است')
@@ -37,9 +34,6 @@ const R_ExaminationsSurgeryValidator = Yup.object().shape({
 });
 
 const L_ExaminationsSurgeryValidator = Yup.object().shape({
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
   L_dateSurgery: Yup.string().required('این فیلد لازم است').nullable(),
   L_timeSurgery: Yup.string('این فیلد باید رشته باشد')
     .required('این فیلد لازم است')

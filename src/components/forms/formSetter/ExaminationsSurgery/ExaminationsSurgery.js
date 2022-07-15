@@ -67,7 +67,7 @@ const ExaminationsSurgery = () => {
 
   const R_doSubmit = async (value) => {
     const model = {
-      visit: value.visit,
+      visit: value.visit || data.RightModel[0].defaultOption.value,
       wound_rim: woundRimR,
       date: value.R_dateSurgery + ' ' + value.R_timeSurgery,
       surgeon_hierarchy: value.R_surgeon,
@@ -97,7 +97,7 @@ const ExaminationsSurgery = () => {
   };
   const L_doSubmit = async (value) => {
     const model = {
-      visit: value.visit,
+      visit: value.visit || data.RightModel[0].defaultOption.value,
       wound_rim: woundRimL,
       date: value.L_dateSurgery + ' ' + value.L_timeSurgery,
       surgeon_hierarchy: value.L_surgeon,

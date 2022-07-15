@@ -45,7 +45,7 @@ const Glaucoma = () => {
 
   const doSubmit = async (value) => {
     const model = {
-      visit: value.visit,
+      visit: value.visit || data[0].defaultOption.value,
       history_glaucoma_surgery: value.glaucomaHistoryOperation,
       shunt: value.shant,
       shunt_location: value.shantLocation,

@@ -1,9 +1,6 @@
 import * as Yup from 'yup';
 
 const R_AfterSurgeryValidator = Yup.object().shape({
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
   R_cylinder: Yup.number('این فیلد باید پر شود')
     .negative('این فیلد باید منفی باشد')
     .required('این فیلد لازم است')
@@ -42,9 +39,6 @@ const R_AfterSurgeryValidator = Yup.object().shape({
   R_examination_date: Yup.string().required('این فیلد باید پر شود'),
 });
 const L_AfterSurgeryValidator = Yup.object().shape({
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
   L_cylinder: Yup.number('این فیلد باید پر شود')
     .negative('این فیلد باید منفی باشد')
     .required('این فیلد لازم است')

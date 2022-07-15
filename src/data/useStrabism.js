@@ -6,6 +6,7 @@ const API_URL = process.env.REACT_APP_PUBLIC_PATH;
 export const useStrabism = (patient_national_id) => {
   const axios = useAxios();
   const [visitData, setVisitData] = useState([]);
+  const [defaultVisit, setDefaultVisit] = useState();
   useEffect(() => {
     const getVisits = async () => {
       try {
@@ -16,7 +17,8 @@ export const useStrabism = (patient_national_id) => {
             value: `${API_URL}visits/${item.id}/`,
           };
         });
-        setVisitData(visitObjs);
+        setDefaultVisit(visitObjs[0]);
+        setVisitData(visitObjs.splice(1, visitObjs.length - 1));
       } catch (error) {
         if (error.response) {
           console.log(error.response.data);
@@ -47,6 +49,7 @@ export const useStrabism = (patient_national_id) => {
           marginBottom: '15px',
         },
         options: visitData,
+        defaultOption: defaultVisit,
         inputClass: 'mt-1',
         optionItemClass: '',
         readOnly: false,
@@ -742,6 +745,7 @@ export const useStrabism = (patient_national_id) => {
           marginBottom: '15px',
         },
         options: visitData,
+        defaultOption: defaultVisit,
         inputClass: 'mt-1',
         optionItemClass: '',
         readOnly: false,

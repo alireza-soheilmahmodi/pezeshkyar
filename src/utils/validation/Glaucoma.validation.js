@@ -1,9 +1,6 @@
 import * as Yup from 'yup';
 
 const glaucomaValidator = Yup.object().shape({
-  visit: Yup.string('این فیلد باید رشته باشد')
-    .required('این فیلد لازم است')
-    .nullable(),
   age: Yup.number('این فیلد باید عدد باشد').nullable(),
   operationAge: Yup.number('این فیلد باید عدد باشد').nullable(),
   glaucomaHistoryOperation: Yup.string('این فیلد باید رشته باشد').nullable(),

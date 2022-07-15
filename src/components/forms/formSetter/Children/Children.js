@@ -52,7 +52,7 @@ const Children = () => {
 
   const R_doSubmit = async (value) => {
     const model = {
-      visit: value.visit,
+      visit: value.visit || data.RightModel[0].defaultOption.value,
       cornea_status: value.R_quarantineStatus,
       cornea_diameter: value.R_cornealDiameter,
       anterior_chamber: value.R_anteriorRoom,
@@ -78,7 +78,7 @@ const Children = () => {
 
   const L_doSubmit = async (value) => {
     const model = {
-      visit: value.visit,
+      visit: value.visit || data.RightModel[0].defaultOption.value,
       cornea_status: value.L_quarantineStatus,
       cornea_diameter: value.L_cornealDiameter,
       anterior_chamber: value.L_anteriorRoom,
