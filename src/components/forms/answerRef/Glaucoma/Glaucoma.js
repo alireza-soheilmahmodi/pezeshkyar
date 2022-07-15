@@ -8,6 +8,7 @@ import Style from './Glaucoma.module.css';
 import Loading from '../../../common/Loading/Loading';
 import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //deleting visit field from from validator
 delete GlaucomaValidator.fields.visit;
@@ -48,6 +49,8 @@ const Glaucoma = () => {
   const [refDetail, setRefDetail] = useState();
   // remove visit property
   const ansData = data.slice(1);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getRefDetail = async () => {
@@ -112,6 +115,7 @@ const Glaucoma = () => {
     try {
       await axios.post('forms/glaucoma/', model);
       toast.success('اطلاعات با موفقیت ثبت شد');
+      navigate(-1);
     } catch (err) {
       toast.error('اطلاعات فرم کامل نیست');
       console.log(err);

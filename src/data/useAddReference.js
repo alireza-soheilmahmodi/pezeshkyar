@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 export const useAddReference = (patient_national_id) => {
   const axios = useAxios();
   const [visitData, setVisitData] = useState([]);
+  const [defaultVisit, setDefaultVisit] = useState();
   const [doctorList, setDoctorList] = useState([]);
   useEffect(() => {
     const getVisits = async () => {
@@ -15,7 +16,8 @@ export const useAddReference = (patient_national_id) => {
             value: item.id,
           };
         });
-        setVisitData(visitObjs);
+        setDefaultVisit(visitObjs[0]);
+        setVisitData(visitObjs.splice(1, visitObjs.length - 1));
       } catch (error) {
         if (error.response) {
           console.log(error.response.data);
@@ -64,6 +66,7 @@ export const useAddReference = (patient_national_id) => {
       },
 
       options: visitData,
+      defaultOption: defaultVisit,
       inputClass: 'mt-1',
       optionItemClass: '',
       readOnly: false,

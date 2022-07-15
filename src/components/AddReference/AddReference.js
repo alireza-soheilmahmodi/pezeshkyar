@@ -34,25 +34,25 @@ const AddReference = () => {
     }
     const strabismusModel = {
       doctor: value.strabismusDoctor,
-      visit: value.visit,
+      visit: value.visit || data[0].defaultOption.value,
       form: 'استرابیسم',
       details: value.description,
     };
     const geneticsModel = {
       doctor: value.geneticsDoctor,
-      visit: value.visit,
+      visit: value.visit || data[0].defaultOption.value,
       form: 'Genetics',
       details: value.description,
     };
     const glaucomaModel = {
       doctor: value.glaucomaDoctor,
-      visit: value.visit,
+      visit: value.visit || data[0].defaultOption.value,
       form: 'Glaucoma',
       details: value.description,
     };
     const retinaConsultModel = {
       doctor: value.retinaConsultDoctor,
-      visit: value.visit,
+      visit: value.visit || data[0].defaultOption.value,
       form: 'Retina Consult',
       details: value.description,
     };

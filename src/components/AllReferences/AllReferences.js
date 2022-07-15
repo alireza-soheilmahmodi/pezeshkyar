@@ -29,8 +29,12 @@ const AllReferences = () => {
 
   useEffect(() => {
     const getRefs = async () => {
-      const refs = await axios.get('refers/');
-      setRefers(refs.data);
+      try {
+        const refs = await axios.get('refers/');
+        setRefers(refs.data);
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     getRefs();
@@ -58,7 +62,7 @@ const AllReferences = () => {
   return (
     <div className={Style.container}>
       <div
-        className="col-md-8 col-sm-12 mt-5 m-auto p-0"
+        className="col-12 col-md-9 mt-4 m-auto"
         style={{
           boxShadow: '0 0 10px 1px #ccc',
           background: '#f2f2f2',
@@ -69,45 +73,41 @@ const AllReferences = () => {
             <tr>
               <th className={Style.th}>نام و نام خانوادگی</th>
               <th className={Style.th}>فرم ارجاع داده شده</th>
+              <th className={Style.th}>وضعیت</th>
               <th className={Style.th}>تاریخ و ساعت ثبت</th>
             </tr>
           </thead>
           <tbody>
             {refers &&
               refers.results.map((item, index) => (
-                <tr key={index} className={Style.tr}>
-                  <td
-                    onClick={() =>
+                <tr
+                  key={index}
+                  className={Style.tr}
+                  onClick={() => {
+                    item.status !== 'پاسخ داده شده' &&
                       navigate(
                         `/app/answerRef/${formToUrl(item.form)}/${item.id}`
-                      )
-                    }
-                    className={Style.td}
-                  >
+                      );
+                  }}
+                >
+                  <td className={Style.td}>
                     {item.patient_summary.first_name +
                       ' ' +
                       item.patient_summary.last_name}
                   </td>
+
+                  <td className={Style.td}>{item.form}</td>
                   <td
-                    onClick={() =>
-                      navigate(
-                        `/app/answerRef/${formToUrl(item.form)}/${item.id}`
-                      )
-                    }
                     className={Style.td}
+                    style={{
+                      color: `${
+                        item.status !== 'پاسخ داده شده' ? 'red' : 'green'
+                      }`,
+                    }}
                   >
-                    {item.form}
+                    {item.status}
                   </td>
-                  <td
-                    onClick={() =>
-                      navigate(
-                        `/app/answerRef/${formToUrl(item.form)}/${item.id}`
-                      )
-                    }
-                    className={Style.td}
-                  >
-                    {item.creation_date}
-                  </td>
+                  <td className={Style.td}>{item.creation_date}</td>
                 </tr>
               ))}
           </tbody>

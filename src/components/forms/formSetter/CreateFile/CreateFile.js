@@ -91,9 +91,6 @@ const CreateFile = () => {
           background: '#f2f2f2',
         }}
       >
-        <br />
-        <h2> </h2>
-        <br />
         <Formik
           initialValues={initialDefaultValues}
           onSubmit={doSubmit}
