@@ -1,22 +1,49 @@
 .container {
   display: inline-block;
   position: relative;
-  width: 50%;
-  padding: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 1px;
+ 
 }
 
 .label {
   position: absolute;
   top: -0.5rem;
-  right: 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
+  right: 1.2rem;
+  font-size: 1.1rem;
   padding: 0.2rem 0.5rem;
   background-color: #f4f4fd;
+  white-space: nowrap;
+ 
 }
 
 .wrapper {
-  border-radius: 10px;
+  border-radius: 1px;
   padding: 1.5rem 0 1rem 0;
+  margin: 0 0.5rem;
+  overflow: auto;
 }
+
+.innerText {
+  font-weight: bold;
+  padding-right: 1.4rem;
+  direction: ltr;
+  text-align: right;
+  word-wrap: break-word;
+}
+
+
+
+@media only screen and (min-width: 576px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 33%;
+  }
+}
+
 

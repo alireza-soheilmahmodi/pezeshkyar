@@ -60,7 +60,7 @@ const PatientPage = () => {
         <FormWrapper label="اطلاعات بیمار" borderColor="#4351ff">
           <div
             className={Style.InfoWrapper}
-            style={{ maxHeight: patientInfoExpand ? '1200px' : '370px' }}
+            style={{ maxHeight: patientInfoExpand ? '3000px' : '365px' }}
           >
             {Object.entries(patientDataLabels).map(([key, label]) => (
               <FormField
@@ -120,13 +120,15 @@ const PatientPage = () => {
                       <Link to={`/app/form/get${url}`}>
                         <FaEye className={Style.detailButtons} />
                       </Link>
-                      <FaTrash
-                        className={Style.detailButtons}
-                        onClick={() => {
-                          setModalIsOpen(true);
-                          setDeleteFormUrl(url);
-                        }}
-                      />
+                      <div>
+                        <FaTrash
+                          className={Style.detailButtons}
+                          onClick={() => {
+                            setModalIsOpen(true);
+                            setDeleteFormUrl(url);
+                          }}
+                        />
+                      </div>
 
                       <Link to={`/app/form/edit${url}`}>
                         <FaEdit className={Style.detailButtons} />

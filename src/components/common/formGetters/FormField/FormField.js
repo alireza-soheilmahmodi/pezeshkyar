@@ -9,9 +9,8 @@ const FormFiled = ({ label, value, borderColor = 'black', width }) => {
       >
         <label className={Style.label}>{label}</label>
         <div
+          className={Style.innerText}
           style={{
-            direction: 'ltr',
-            textAlign: 'center',
             color: value == null ? 'red' : 'black',
           }}
         >
