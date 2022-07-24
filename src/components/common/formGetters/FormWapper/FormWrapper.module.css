@@ -1,7 +1,7 @@
 .container {
   position: relative;
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 0 2rem 0;
 }
 
 .label {
@@ -11,7 +11,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  background-color: #f4f4fd;
+  background-color: #ffffff;
 }
 
 .wrapper {

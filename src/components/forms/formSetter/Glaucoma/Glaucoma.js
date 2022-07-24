@@ -117,7 +117,7 @@ const Glaucoma = () => {
               <br />
 
               <br />
-              <button type="submit" className={`${Style.jfButton} m-auto mb-2`}>
+              <button type="submit" className="m-auto  mt-4 mb-2 jfButton">
                 ثبت
               </button>
             </div>

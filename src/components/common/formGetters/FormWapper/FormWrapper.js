@@ -5,7 +5,10 @@ const formWrapper = ({ children, label, borderColor = 'black' }) => {
     <section className={Style.container}>
       <div
         className={Style.wrapper}
-        style={{ border: `4px solid ${borderColor}` }}
+        style={{
+          borderTop: `8px solid ${borderColor}`,
+          borderBottom: `8px solid ${borderColor}`,
+        }}
       >
         <label className={Style.label}>{label}</label>
         {children}

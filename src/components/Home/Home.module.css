@@ -15,9 +15,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  padding: 2rem 0rem;
+  border-radius: 15px;
 }
 
 .icons{
@@ -31,7 +34,14 @@
   text-decoration: none;
   width: 30%;
   margin: 1rem 2rem ;  
+  background-color: #5c8cf6;
+  border-radius: .5em;
+  transition: background-color 100ms ease-in ;
 
+}
+
+.Button:hover{
+  background-color: #0f1a3d;
 }
 
 .Button button{
@@ -43,4 +53,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }

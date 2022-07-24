@@ -52,36 +52,33 @@ background-color: white;
 
 
 .jfButton {
-  margin-top: 2rem;
-  padding: 0.5rem 1rem;
+  padding: 10px 45px;
   cursor: pointer;
   min-width: 200px !important;
   max-width: 20% !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  margin-top: 1rem;
   user-select: none;
   white-space: nowrap;
   font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
   display: block;
-  font-size: 1.7rem;
-  color: white;
-  background-color: #50a3a2 !important;
-  -webkit-transition: 1s;
-  transition: 1s;
+  font-size: 1.5rem;
+  background-color: #5c8cf6 !important;
+  transition: all 200ms ease-in;
   border: none;
+  color:white;
 }
 
 .jfButton:hover {
-  -webkit-transition: 1s;
-  transition: 1s;
   color: white;
-  background-color: #2c8754 !important;
-  -webkit-transition: background-color 100ms;
-  transition: background-color 100ms;
+  background-color: #0e3947 !important;
 }
+
+
 
 .selectDoctor{
   width: 100%;

@@ -8,7 +8,7 @@
 
 .resultContainer {
   flex-grow: 1;
-  width: 100%;
+  width: 50%;
   overflow: auto;
   text-align: center;
 }
@@ -24,32 +24,60 @@
   text-decoration: none;
   color: black;
   padding: 0.5rem;
+  transition: background-color 200ms ease-in,color 200ms ease-in;
 }
 
-.link:hover {
-  background-color: rgb(93, 157, 209);
+.createFileB,.createFileB:hover {
   color: white;
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
 }
 
-.createFileB{
-  color: white;
+.link:hover:not(.createFileB) {
+  background-color:  #e1e3ea;
+  color: black;
+
 }
+
+
 
 .searchField{
-  
   width: 100%;
+  position: relative !important;
+
+
 }
 
 
 .searchField input{
-  display: block;
   width: 50% !important;
-  margin: auto;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 0.7rem 0 !important;
+  padding-right: 3.2rem !important;
+  border-radius: 25px;
   transition: border 0.1s ease-in;
 }
 
-.searchField input:focus {
-  border: 2px solid #555;
+.searchInput{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput > span{
+  position: absolute;
+  color: grey;
+  right: 27%;
+  top: 25%;
+ 
+}
+
+.removeBorder{
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+
+.lastLi{
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
 }

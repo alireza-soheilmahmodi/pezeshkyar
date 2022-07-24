@@ -57,7 +57,7 @@ const PatientPage = () => {
           boxShadow: '0 0 10px 1px #ccc',
         }}
       >
-        <FormWrapper label="اطلاعات بیمار" borderColor="#4351ff">
+        <FormWrapper label="اطلاعات بیمار" borderColor="#0d1357">
           <div
             className={Style.InfoWrapper}
             style={{ maxHeight: patientInfoExpand ? '3000px' : '365px' }}
@@ -74,27 +74,16 @@ const PatientPage = () => {
           {/* dropdown button */}
           <div className={`${patientInfoExpand ? 'dropup' : 'dropdown'}`}>
             <button
-              className="btn btn-outline-dark dropdown-toggle mx-auto d-block"
+              className="btn btn-outline-dark dropdown-toggle mx-auto d-block w-25 mt-3"
               onClick={() => setPatientInfoExpand((prev) => !prev)}
             ></button>
           </div>
         </FormWrapper>
 
-        <div className="d-block text-center">
-          <Link
-            className={Style.addFormButton}
-            to={`/app/addReference/${patientInfo.national_id}`}
-          >
-            <button className="btn btn-warning mt-5 btn-lg btn-block">
-              افزودن ارجاع
-            </button>
-          </Link>
-        </div>
-
         <div className={Style.form}>
           <h2>فرم های بیمار</h2>
           {Object.entries(patientFormsLabel).map(([key, label], formIndex) => (
-            <FormWrapper label={label} key={key} borderColor="#20b534">
+            <FormWrapper label={label} key={key} borderColor="#101358">
               <ul className={`${Style.formRow} ${Style.header}`}>
                 <li>تاریخ و ساعت</li>
                 <li>چشم</li>
@@ -142,13 +131,26 @@ const PatientPage = () => {
                 className={Style.addFormButton}
                 to={`/app/form/set/${key}/${patientInfo.national_id}`}
               >
-                <button className="btn btn-success btn-lg btn-block">
+                <button className="btn btn-primary text-white btn-lg btn-block w-25">
                   افزودن فرم
                 </button>
               </Link>
             </FormWrapper>
           ))}
         </div>
+
+        <div className="d-block text-center">
+          <Link
+            className={Style.addFormButton}
+            to={`/app/addReference/${patientInfo.national_id}`}
+          >
+            <button className="btn btn-warning mt-5 btn-lg btn-block">
+              افزودن ارجاع
+            </button>
+          </Link>
+        </div>
+
+        <br />
 
         {modalIsOpen && (
           <DeleteFormModal setIsOpen={setModalIsOpen} formUrl={deleteFormUrl} />

@@ -18,19 +18,15 @@
   cursor: pointer;
   display: block;
   font-size: 1.5rem;
-  background-color: #50a3a2 !important;
+  background-color: #5c8cf6 !important;
   -webkit-transition: 1s;
-  transition: 1s;
+  transition: all 200ms ease-in;
   border: none;
   color:white;
 }
 
 .jfButton:hover {
-  -webkit-transition: 1s;
-  transition: 1s;
   color: white;
-  background-color: #2c8754 !important;
-  -webkit-transition: background-color 100ms;
-  transition: background-color 100ms;
+  background-color: #0e3947 !important;
 }
 

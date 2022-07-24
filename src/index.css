@@ -19,7 +19,7 @@ select{
   display: block;
   padding: 0.5rem;
   border-radius: 3px;
-  background-color: white;
+  background-color: #fbfbff !important;
 }
 
 textarea{
@@ -28,8 +28,8 @@ textarea{
   padding: 0.5rem;
 }
 
-input[type='text']{
-  background-color: white !important;
+input[type='text']:not(.formInput){
+  background-color: #fbfbff !important;
   width: 100%;
   padding: 0.5rem 1rem;
   display: block;
@@ -37,10 +37,37 @@ input[type='text']{
 }
 
 input[type='number']{
-  background-color: white !important;
+  background-color: #fbfbff !important;
 
 }
 
 .input-help{
   color: black !important;
+}
+
+.jfButton {
+  padding: 10px 45px;
+  cursor: pointer;
+  min-width: 200px !important;
+  max-width: 20% !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  margin-top: 1rem;
+  user-select: none;
+  white-space: nowrap;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.5rem;
+  background-color: #5c8cf6 !important;
+  transition: all 200ms ease-in;
+  border: none;
+  color:white;
+}
+
+.jfButton:hover {
+  color: white;
+  background-color: #0e3947 !important;
 }

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Style from './PatientSearchBox.module.css';
 import { usePatientSearch } from '../../../hooks/usePatientSearch';
 import Loading from '../Loading/Loading';
+import { FaSearch } from 'react-icons/fa';
 
 const PatientSearchBox = () => {
   const [name, setName] = useState('');
@@ -20,16 +21,25 @@ const PatientSearchBox = () => {
 
   return (
     <section className={Style.container}>
-      <label> جستجوی بیمار</label>
-
       <form className={Style.searchField} onSubmit={(e) => e.preventDefault()}>
-        <input
-          ref={inputRef}
-          type="text"
-          required
-          onChange={(e) => handleChange(e)}
-          value={name}
-        />
+        <div className={Style.searchInput}>
+          <span>
+            <FaSearch />
+          </span>
+          <input
+            className={
+              inputRef.current?.value?.length > 0 && !loadingResult
+                ? Style.removeBorder
+                : ''
+            }
+            ref={inputRef}
+            type="text"
+            required
+            onChange={(e) => handleChange(e)}
+            value={name}
+            placeholder="جستجوی بیمار..."
+          />
+        </div>
       </form>
 
       <ul className={`list-group ${Style.resultContainer}`}>
@@ -52,7 +62,7 @@ const PatientSearchBox = () => {
 
             {((inputRef.current?.value?.length > 0 && !loadingResult) ||
               result.length > 0) && (
-              <li className="list-group-item bg-primary ">
+              <li className={`${Style.lastLi} list-group-item bg-primary`}>
                 <Link
                   to={'/app/createFile'}
                   className={`${Style.link} ${Style.createFileB}`}

@@ -154,10 +154,7 @@ const BeforeSurgery = () => {
                 <InputMaker data={data.RightEye} />
 
                 <br />
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
+                <button type="submit" className="m-auto  mt-4 mb-2 jfButton">
                   ثبت
                 </button>
               </div>
@@ -191,10 +188,7 @@ const BeforeSurgery = () => {
                 <InputMaker data={data.LeftEye} />
 
                 <br />
-                <button
-                  type="submit"
-                  className={`${Style.jfButton} m-auto mb-2`}
-                >
+                <button type="submit" className="m-auto  mt-4 mb-2 jfButton">
                   ثبت
                 </button>
               </div>
