@@ -12,20 +12,30 @@
 .App {
   height: 100vh;
   font-family: 'B-Nazanin';
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 select{
   display: block;
   padding: 0.5rem;
   border-radius: 3px;
-  background-color: #fbfbff !important;
+  background-color: #d9d9d9 !important;
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
+  border: none !important; 
+}
+
+select option{
+  background-color: #ffffff !important;
+  font-size: 1.3rem;
 }
 
 textarea{
   width: 100%;
   height: 10rem;
   padding: 0.5rem;
+  border-radius: 15px;
+  border: 2px solid rgb(190, 190, 190); 
 }
 
 input[type='text']:not(.formInput){
@@ -33,12 +43,17 @@ input[type='text']:not(.formInput){
   width: 100%;
   padding: 0.5rem 1rem;
   display: block;
-  border: 1px solid grey !important;
+  border-radius: 10px;
+  border: 2px solid rgb(190, 190, 190); 
+  text-align: start !important;
+  direction: rtl !important;
 }
 
 input[type='number']{
   background-color: #fbfbff !important;
-
+  border-radius: 10px;
+  border: 2px solid rgb(190, 190, 190); 
+  padding: 0.3rem 0;
 }
 
 .input-help{

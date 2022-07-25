@@ -60,7 +60,7 @@ const PatientPage = () => {
         <FormWrapper label="اطلاعات بیمار" borderColor="#0d1357">
           <div
             className={Style.InfoWrapper}
-            style={{ maxHeight: patientInfoExpand ? '3000px' : '365px' }}
+            style={{ maxHeight: patientInfoExpand ? '3000px' : '345px' }}
           >
             {Object.entries(patientDataLabels).map(([key, label]) => (
               <FormField
@@ -84,48 +84,54 @@ const PatientPage = () => {
           <h2>فرم های بیمار</h2>
           {Object.entries(patientFormsLabel).map(([key, label], formIndex) => (
             <FormWrapper label={label} key={key} borderColor="#101358">
-              <ul className={`${Style.formRow} ${Style.header}`}>
-                <li>تاریخ و ساعت</li>
-                <li>چشم</li>
-                <li>مشخصات دکتر</li>
-                <li>جزئیات بیشتر</li>
-              </ul>
-              {patientForms[key].map((item, index) => {
-                const urlArray = item?.url.split('/').slice(-3);
-                let url = '';
-                urlArray.forEach((element) => {
-                  url = url + `/${element}`;
-                });
-                return (
-                  <ul className={Style.formRow} key={index}>
-                    <li>{item?.register_date}</li>
-                    <li>{item?.eye_side || '----'}</li>
-                    <li>
-                      {item?.doctor?.user?.first_name +
-                        ' ' +
-                        item?.doctor?.user?.last_name}
-                    </li>
-                    <li className={Style.details}>
-                      <Link to={`/app/form/get${url}`}>
-                        <FaEye className={Style.detailButtons} />
-                      </Link>
-                      <div>
-                        <FaTrash
-                          className={Style.detailButtons}
-                          onClick={() => {
-                            setModalIsOpen(true);
-                            setDeleteFormUrl(url);
-                          }}
-                        />
-                      </div>
-
-                      <Link to={`/app/form/edit${url}`}>
-                        <FaEdit className={Style.detailButtons} />
-                      </Link>
-                    </li>
+              {patientForms[key].length == 0 ? (
+                <h3 style={{ color: 'red' }}>اطلاعاتی وجود ندارد</h3>
+              ) : (
+                <>
+                  <ul className={`${Style.formRow} ${Style.header}`}>
+                    <li>تاریخ و ساعت</li>
+                    <li>چشم</li>
+                    <li>مشخصات دکتر</li>
+                    <li>جزئیات بیشتر</li>
                   </ul>
-                );
-              })}
+                  {patientForms[key].map((item, index) => {
+                    const urlArray = item?.url.split('/').slice(-3);
+                    let url = '';
+                    urlArray.forEach((element) => {
+                      url = url + `/${element}`;
+                    });
+                    return (
+                      <ul className={Style.formRow} key={index}>
+                        <li>{item?.register_date}</li>
+                        <li>{item?.eye_side || '----'}</li>
+                        <li>
+                          {item?.doctor?.user?.first_name +
+                            ' ' +
+                            item?.doctor?.user?.last_name}
+                        </li>
+                        <li className={Style.details}>
+                          <Link to={`/app/form/get${url}`}>
+                            <FaEye className={Style.detailButtons} />
+                          </Link>
+                          <div>
+                            <FaTrash
+                              className={Style.detailButtons}
+                              onClick={() => {
+                                setModalIsOpen(true);
+                                setDeleteFormUrl(url);
+                              }}
+                            />
+                          </div>
+
+                          <Link to={`/app/form/edit${url}`}>
+                            <FaEdit className={Style.detailButtons} />
+                          </Link>
+                        </li>
+                      </ul>
+                    );
+                  })}
+                </>
+              )}
 
               <Link
                 className={Style.addFormButton}

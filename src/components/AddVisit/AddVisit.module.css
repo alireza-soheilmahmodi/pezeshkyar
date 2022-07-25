@@ -21,7 +21,6 @@
 
 .inputForm input{
   width: 100%;
-  border-radius: 5px;
   padding: 0.5rem 1rem;
 }
 
@@ -34,7 +33,10 @@
 .paLi{
   padding: 0;
   margin: 2px 0;
-  
+}
+
+.paLi:hover{
+  background-color: rgb(225, 225, 225);
 }
 
 .paButton{  
@@ -45,7 +47,6 @@
 
 .dropDown{
 width: 100%;
-border-radius: 5px;
 padding: 1rem 0.5rem;
 background-color: white;
 }
@@ -82,4 +83,5 @@ background-color: white;
 
 .selectDoctor{
   width: 100%;
+  
 }
