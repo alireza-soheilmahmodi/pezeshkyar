@@ -9,6 +9,7 @@ import {
   FaSignOutAlt,
   FaHome,
   FaFileAlt,
+  FaCloudDownloadAlt,
 } from 'react-icons/fa';
 
 const Sidebar = ({ expandSidebar }) => {
@@ -92,6 +93,14 @@ const Sidebar = ({ expandSidebar }) => {
               ارجاعات
             </span>
           </NavLink>
+        </li>
+        <li className="nav-item">
+          <a className={Style.navLink} href="/export">
+            <FaCloudDownloadAlt className={Style.icons} />
+            <span className={!expandSidebar ? 'd-none' : undefined}>
+              دانلود داده ها
+            </span>
+          </a>
         </li>
         <li className="nav-item">
           <NavLink

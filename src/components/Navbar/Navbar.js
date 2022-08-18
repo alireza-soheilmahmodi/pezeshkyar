@@ -41,6 +41,16 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to={'/app/References'} className="nav-link">
+                ارجاعات
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a href={'/export'} className="nav-link">
+                دانلود داده ها
+              </a>
+            </li>
+            <li className="nav-item">
               <Link to={'/app/logout'} className="nav-link">
                 خروج
               </Link>
