@@ -46,7 +46,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a href={'/export'} className="nav-link">
+              <a href={'http://185.110.191.72:8080/export'} className="nav-link">
                 دانلود داده ها
               </a>
             </li>

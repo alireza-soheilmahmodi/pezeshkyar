@@ -95,7 +95,7 @@ const Sidebar = ({ expandSidebar }) => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <a className={Style.navLink} href="/export">
+          <a className={Style.navLink} href="http://185.110.191.72:8080/export">
             <FaCloudDownloadAlt className={Style.icons} />
             <span className={!expandSidebar ? 'd-none' : undefined}>
               دانلود داده ها
